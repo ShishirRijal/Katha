@@ -23,8 +23,8 @@ extension Font {
         return Font.custom(font.rawValue, size: size)
     }
     
-    static func logoFont() -> Font {
-        return .custom(.playfairDisplayBold, size: 24)
+    static func logoFont(size: CGFloat = 30) -> Font {
+        return .custom(.playfairDisplayBold, size: size)
     }
     
     static func bodyFont(size: CGFloat = 16) -> Font {
