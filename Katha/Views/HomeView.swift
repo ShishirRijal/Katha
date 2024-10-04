@@ -19,7 +19,8 @@ struct HomeView: View {
                     ForEach(0..<dummyArticles.count) { index in
                         // Article Card
                         VStack {
-                            CustomArticleCard(article: dummyArticles[index])
+                            CustomArticleCard(article: dummyArticles[index], isBookmark: false)
+                            
                             Divider()
                                 .overlay(Color.theme.gray)
                                 .padding(.vertical, 10)
@@ -28,8 +29,8 @@ struct HomeView: View {
                 }
             }
             .padding(.horizontal)
+            
         }
-        .padding(.bottom, 5)
         .background(Color.theme.background
             .ignoresSafeArea()
         )
