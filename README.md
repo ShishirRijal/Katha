@@ -90,6 +90,10 @@ Feel free to fork the project, submit a pull request, or raise an issue to impro
 
 ## Screenshots
 <img width="749" alt="Screenshot 2024-10-04 at 10 41 23 AM" src="https://github.com/user-attachments/assets/9169d658-c302-4f0a-ad4f-cffa1b797646">
+<img width="630" alt="Screenshot 2024-10-04 at 3 30 39 PM" src="https://github.com/user-attachments/assets/ded08b27-03f3-4bbf-848e-d0883153c0db">
+<img width="629" alt="Screenshot 2024-10-04 at 3 31 42 PM" src="https://github.com/user-attachments/assets/823e19bf-07a4-4027-abe3-90913abb554e">
+
+
 
 ## License
 This project is licensed under the MIT License.
