@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct RegistrationView: View {
     var body: some View {
         VStack(alignment: .center) {
             Spacer()
@@ -58,7 +58,7 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    RegistrationView()
 }
 
 struct CustomLoginCard: View {
