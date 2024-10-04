@@ -16,10 +16,10 @@ struct HomeView: View {
                 Header()
                 // Articles
                 ScrollView {
-                    ForEach(0..<8) { index in
+                    ForEach(0..<dummyArticles.count) { index in
                         // Article Card
                         VStack {
-                            CustomArticleCard()
+                            CustomArticleCard(article: dummyArticles[index])
                             Divider()
                                 .overlay(Color.theme.gray)
                                 .padding(.vertical, 10)
