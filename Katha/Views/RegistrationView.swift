@@ -9,50 +9,73 @@ import SwiftUI
 
 struct RegistrationView: View {
     var body: some View {
-        VStack(alignment: .center) {
-            Spacer()
-            Text("Medium")
-                .font(.logoFont())
+        ScrollView {
             
-            Spacer()
-            
-            Text("Human\nstories and\nideas.")
-                .scaledToFit()
-                .font(.custom(.playfairDisplayMedium, size: 60))
-                .multilineTextAlignment(.center)
-            
-            Spacer()
-                .frame(height: 20)
-            
-            Text("Discover perspectives that deepen understanding.")
-                .font(.bodyFont())
-                .multilineTextAlignment(.center)
-            
-            Spacer()
-            
-            CustomLoginCard(name: "Google", icon: .google)
-                .padding(.bottom, 5)
-            
-            CustomLoginCard(name: "Facebook", icon: .facebook)
-                .padding(.bottom, 5)
-            
-            CustomLoginCard(name: "Apple", icon: .apple)
-                .padding(.bottom, 5)
-            
-            Spacer()
-            
-            HStack {
-                Text("Already have an account?")
+            VStack(alignment: .center) {
                 
-                Text("Sign in.")
-                    .foregroundStyle(.accent)
-                    .onTapGesture {
-                        print("Login screen...")
-                    }
+                Spacer()
+                    .frame(height: 30)
+                
+                Text("Medium")
+                    .font(.logoFont())
+                
+                Spacer()
+                    .frame(height: 30)
+                
+                Text("Human\nstories and\nideas.")
+                    .scaledToFit()
+                    .font(.custom(.playfairDisplayMedium, size: 60))
+                    .multilineTextAlignment(.center)
+                
+                Spacer()
+                    .frame(height: 30)
+                
+                Text("Discover perspectives that deepen understanding.")
+                    .font(.bodyFont())
+                    .multilineTextAlignment(.center)
+                
+                Spacer()
+                    .frame(height: 30)
+                
+                CustomLoginCard(name: "Google", icon: .google)
+                    .padding(.bottom, 5)
+                
+                CustomLoginCard(name: "Facebook", icon: .facebook)
+                    .padding(.bottom, 5)
+                
+                CustomLoginCard(name: "Apple", icon: .apple)
+                    .padding(.bottom, 5)
+                
+                Spacer()
+                    .frame(height: 30)
+
+                VStack {
+                    Text("Already have an account? ")
+                        + Text("Sign in.")
+                            .foregroundColor(.accentColor)
+                }
+                .multilineTextAlignment(.center)
+                
+                Spacer()
+                    .frame(height: 50)
+                
+                VStack {
+                    Text("By signing up, you agree to our ")
+                        + Text("Terms of Service")
+                            .underline()
+                            .foregroundColor(.blue)
+                        + Text(" and acknowledge that our ")
+                        + Text("Privacy Policy")
+                            .underline()
+                            .foregroundColor(.blue)
+                        + Text(" applies to you.")
+                }
+                .multilineTextAlignment(.center)
+                
+                
             }
-            
+            .padding()
         }
-        .padding()
         
     }
 }
