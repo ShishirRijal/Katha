@@ -9,7 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @State var email: String = ""
+    @StateObject private var loginViewModel = LoginViewModel()
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -24,14 +25,14 @@ struct LoginView: View {
                 VStack(alignment: .leading) {
                     Text("Your email")
                         
-                    CustomTextField(placeholder: "rijal.shishir@test.com", text: $email)
+                    CustomTextField(placeholder: "rijal.shishir@test.com", text: $loginViewModel.email)
                 }
                 
                 Spacer()
                     .frame(height: 30)
                 
                 CustomButton(title: "Continue") {
-                    //
+                    loginViewModel.login()
                 }
                 
                 Spacer()

@@ -27,6 +27,7 @@
 		DBFABEEA2CAFE2FC006ABECA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEE92CAFE2FC006ABECA /* CustomButton.swift */; };
 		DBFABEEC2CAFE39F006ABECA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEEB2CAFE39F006ABECA /* CustomTextField.swift */; };
 		DBFABEEE2CAFE756006ABECA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEED2CAFE756006ABECA /* LoginView.swift */; };
+		DBFABEF02CAFE964006ABECA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEEF2CAFE964006ABECA /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		DBFABEE92CAFE2FC006ABECA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DBFABEEB2CAFE39F006ABECA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DBFABEED2CAFE756006ABECA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DBFABEEF2CAFE964006ABECA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			children = (
 				DBFABEE02CAFBEF1006ABECA /* AuthViewModel.swift */,
 				DBFABEE42CAFC633006ABECA /* RegistrationViewModel.swift */,
+				DBFABEEF2CAFE964006ABECA /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				DBFABEEA2CAFE2FC006ABECA /* CustomButton.swift in Sources */,
 				DBFABEEE2CAFE756006ABECA /* LoginView.swift in Sources */,
 				DBFABEE32CAFC48A006ABECA /* RegistrationView.swift in Sources */,
+				DBFABEF02CAFE964006ABECA /* LoginViewModel.swift in Sources */,
 				DBFABEDD2CAF454C006ABECA /* Font.swift in Sources */,
 				DBFABEE52CAFC633006ABECA /* RegistrationViewModel.swift in Sources */,
 				DB615D412CAF332F00CD1813 /* ContentView.swift in Sources */,
