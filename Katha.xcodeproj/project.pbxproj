@@ -11,7 +11,7 @@
 		DB615D412CAF332F00CD1813 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB615D402CAF332F00CD1813 /* ContentView.swift */; };
 		DB615D432CAF333000CD1813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB615D422CAF333000CD1813 /* Assets.xcassets */; };
 		DB615D462CAF333000CD1813 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB615D452CAF333000CD1813 /* Preview Assets.xcassets */; };
-		DBFABEC92CAF373C006ABECA /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEC82CAF373C006ABECA /* RegistrationView.swift */; };
+		DBFABEC92CAF373C006ABECA /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEC82CAF373C006ABECA /* AuthView.swift */; };
 		DBFABED02CAF435E006ABECA /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBFABECD2CAF435E006ABECA /* PlayfairDisplay-Bold.ttf */; };
 		DBFABED12CAF435E006ABECA /* PlayfairDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBFABECE2CAF435E006ABECA /* PlayfairDisplay-Medium.ttf */; };
 		DBFABED22CAF435E006ABECA /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBFABECF2CAF435E006ABECA /* PlayfairDisplay-Regular.ttf */; };
@@ -28,7 +28,7 @@
 		DB615D402CAF332F00CD1813 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB615D422CAF333000CD1813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB615D452CAF333000CD1813 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DBFABEC82CAF373C006ABECA /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		DBFABEC82CAF373C006ABECA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		DBFABECC2CAF4263006ABECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBFABECD2CAF435E006ABECA /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		DBFABECE2CAF435E006ABECA /* PlayfairDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Medium.ttf"; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		DBFABEC72CAF3732006ABECA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DBFABEC82CAF373C006ABECA /* RegistrationView.swift */,
+				DBFABEC82CAF373C006ABECA /* AuthView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,7 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBFABEC92CAF373C006ABECA /* RegistrationView.swift in Sources */,
+				DBFABEC92CAF373C006ABECA /* AuthView.swift in Sources */,
 				DBFABEDB2CAF4476006ABECA /* Color.swift in Sources */,
 				DBFABEDD2CAF454C006ABECA /* Font.swift in Sources */,
 				DB615D412CAF332F00CD1813 /* ContentView.swift in Sources */,

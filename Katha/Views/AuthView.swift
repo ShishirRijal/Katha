@@ -7,8 +7,12 @@
 
 import SwiftUI
 
-struct RegistrationView: View {
+struct AuthView: View {
+    
+    @State private var isLogin: Bool = false
+    
     var body: some View {
+        
         ScrollView {
             
             VStack(alignment: .center) {
@@ -37,40 +41,51 @@ struct RegistrationView: View {
                 Spacer()
                     .frame(height: 30)
                 
-                CustomLoginCard(name: "Google", icon: .google)
+                CustomLoginCard(name: "Google", icon: .google, isLogin: $isLogin)
                     .padding(.bottom, 5)
                 
-                CustomLoginCard(name: "Facebook", icon: .facebook)
+                CustomLoginCard(name: "Facebook", icon: .facebook, isLogin: $isLogin)
                     .padding(.bottom, 5)
                 
-                CustomLoginCard(name: "Apple", icon: .apple)
+                CustomLoginCard(name: "Apple", icon: .apple, isLogin: $isLogin)
+                    .padding(.bottom, 5)
+                
+                CustomLoginCard(name: "Email", icon: .email, isLogin: $isLogin)
                     .padding(.bottom, 5)
                 
                 Spacer()
                     .frame(height: 30)
 
                 VStack {
-                    Text("Already have an account? ")
-                        + Text("Sign in.")
-                            .foregroundColor(.accentColor)
+                    Text(isLogin ? "Don't have an account? " : "Already have an account? ")
+                    + Text(isLogin ? "Sign up." : "Sign in.")
+                        .underline()
+                        .foregroundColor(.green)
+                            
                 }
                 .multilineTextAlignment(.center)
+                .onTapGesture {
+                    isLogin.toggle()
+                }
                 
                 Spacer()
                     .frame(height: 50)
                 
-                VStack {
-                    Text("By signing up, you agree to our ")
-                        + Text("Terms of Service")
-                            .underline()
-                            .foregroundColor(.blue)
-                        + Text(" and acknowledge that our ")
-                        + Text("Privacy Policy")
-                            .underline()
-                            .foregroundColor(.blue)
-                        + Text(" applies to you.")
+                if !isLogin {
+                    VStack {
+                        Text("By signing up, you agree to our ")
+                            + Text("Terms of Service")
+                                .underline()
+                                .foregroundColor(.blue)
+                            + Text(" and acknowledge that our ")
+                            + Text("Privacy Policy")
+                                .underline()
+                                .foregroundColor(.blue)
+                            + Text(" applies to you.")
+                    }
+                    .multilineTextAlignment(.center)
                 }
-                .multilineTextAlignment(.center)
+                
                 
                 
             }
@@ -81,13 +96,14 @@ struct RegistrationView: View {
 }
 
 #Preview {
-    RegistrationView()
+    AuthView()
 }
 
 struct CustomLoginCard: View {
     
     let name: String
     let icon: ImageResource
+    @Binding var isLogin: Bool
     
     
     var body: some View {
@@ -97,7 +113,7 @@ struct CustomLoginCard: View {
                 .aspectRatio(1, contentMode: .fit)
                 .frame(width: 25)
             Spacer()
-            Text("Sign up with \(name)")
+            Text( isLogin ? "Sign in with \(name)" : "Sign up with \(name)")
             Spacer()
         }
         .padding(.vertical, 12)
