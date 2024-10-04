@@ -29,7 +29,7 @@
 		DB615D422CAF333000CD1813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB615D452CAF333000CD1813 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DBFABEC82CAF373C006ABECA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		DBFABECC2CAF4263006ABECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DBFABECC2CAF4263006ABECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBFABECD2CAF435E006ABECA /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		DBFABECE2CAF435E006ABECA /* PlayfairDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Medium.ttf"; sourceTree = "<group>"; };
 		DBFABECF2CAF435E006ABECA /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
@@ -70,14 +70,9 @@
 		DB615D3D2CAF332F00CD1813 /* Katha */ = {
 			isa = PBXGroup;
 			children = (
-				DBFABED92CAF446C006ABECA /* Extensions */,
 				DBFABECC2CAF4263006ABECA /* Info.plist */,
-				DBFABED32CAF441C006ABECA /* Poppins-Bold.ttf */,
-				DBFABED52CAF441C006ABECA /* Poppins-Medium.ttf */,
-				DBFABED42CAF441C006ABECA /* Poppins-Regular.ttf */,
-				DBFABECD2CAF435E006ABECA /* PlayfairDisplay-Bold.ttf */,
-				DBFABECE2CAF435E006ABECA /* PlayfairDisplay-Medium.ttf */,
-				DBFABECF2CAF435E006ABECA /* PlayfairDisplay-Regular.ttf */,
+				DBFABEDE2CAFAF2C006ABECA /* CustomFont */,
+				DBFABED92CAF446C006ABECA /* Extensions */,
 				DBFABEC72CAF3732006ABECA /* Views */,
 				DB615D3E2CAF332F00CD1813 /* KathaApp.swift */,
 				DB615D402CAF332F00CD1813 /* ContentView.swift */,
@@ -110,6 +105,19 @@
 				DBFABEDC2CAF454C006ABECA /* Font.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DBFABEDE2CAFAF2C006ABECA /* CustomFont */ = {
+			isa = PBXGroup;
+			children = (
+				DBFABED32CAF441C006ABECA /* Poppins-Bold.ttf */,
+				DBFABED52CAF441C006ABECA /* Poppins-Medium.ttf */,
+				DBFABED42CAF441C006ABECA /* Poppins-Regular.ttf */,
+				DBFABECD2CAF435E006ABECA /* PlayfairDisplay-Bold.ttf */,
+				DBFABECE2CAF435E006ABECA /* PlayfairDisplay-Medium.ttf */,
+				DBFABECF2CAF435E006ABECA /* PlayfairDisplay-Regular.ttf */,
+			);
+			path = CustomFont;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
