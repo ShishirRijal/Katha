@@ -33,6 +33,7 @@
 		DBFABEF62CB01690006ABECA /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEF52CB01690006ABECA /* ExploreView.swift */; };
 		DBFABEF82CB016CE006ABECA /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEF72CB016CE006ABECA /* LibraryView.swift */; };
 		DBFABEFA2CB0179E006ABECA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEF92CB0179E006ABECA /* ProfileView.swift */; };
+		DBFABEFC2CB02D72006ABECA /* CustomArticleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEFB2CB02D72006ABECA /* CustomArticleCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		DBFABEF52CB01690006ABECA /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		DBFABEF72CB016CE006ABECA /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		DBFABEF92CB0179E006ABECA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DBFABEFB2CB02D72006ABECA /* CustomArticleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomArticleCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				DBFABEE72CAFE13E006ABECA /* CustomLoginCard.swift */,
 				DBFABEE92CAFE2FC006ABECA /* CustomButton.swift */,
 				DBFABEEB2CAFE39F006ABECA /* CustomTextField.swift */,
+				DBFABEFB2CB02D72006ABECA /* CustomArticleCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				DBFABEE12CAFBEF1006ABECA /* AuthViewModel.swift in Sources */,
 				DBFABEF62CB01690006ABECA /* ExploreView.swift in Sources */,
 				DBFABEEA2CAFE2FC006ABECA /* CustomButton.swift in Sources */,
+				DBFABEFC2CB02D72006ABECA /* CustomArticleCard.swift in Sources */,
 				DBFABEEE2CAFE756006ABECA /* LoginView.swift in Sources */,
 				DBFABEF82CB016CE006ABECA /* LibraryView.swift in Sources */,
 				DBFABEFA2CB0179E006ABECA /* ProfileView.swift in Sources */,

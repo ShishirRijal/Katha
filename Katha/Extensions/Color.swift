@@ -19,5 +19,6 @@ struct ColorTheme {
     let accent = Color("AccentColor")
     let background = Color("BackgroundColor")
     let white = Color("WhiteColor")
-    let black = Color("BlackCOlor")
+    let black = Color("BlackColor")
+    let gray = Color("GrayColor")
 }
