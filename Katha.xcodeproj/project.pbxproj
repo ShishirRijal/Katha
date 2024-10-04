@@ -21,6 +21,12 @@
 		DBFABEDB2CAF4476006ABECA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEDA2CAF4476006ABECA /* Color.swift */; };
 		DBFABEDD2CAF454C006ABECA /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEDC2CAF454C006ABECA /* Font.swift */; };
 		DBFABEE12CAFBEF1006ABECA /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEE02CAFBEF1006ABECA /* AuthViewModel.swift */; };
+		DBFABEE32CAFC48A006ABECA /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEE22CAFC48A006ABECA /* RegistrationView.swift */; };
+		DBFABEE52CAFC633006ABECA /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEE42CAFC633006ABECA /* RegistrationViewModel.swift */; };
+		DBFABEE82CAFE13E006ABECA /* CustomLoginCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEE72CAFE13E006ABECA /* CustomLoginCard.swift */; };
+		DBFABEEA2CAFE2FC006ABECA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEE92CAFE2FC006ABECA /* CustomButton.swift */; };
+		DBFABEEC2CAFE39F006ABECA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEEB2CAFE39F006ABECA /* CustomTextField.swift */; };
+		DBFABEEE2CAFE756006ABECA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEED2CAFE756006ABECA /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +46,12 @@
 		DBFABEDA2CAF4476006ABECA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DBFABEDC2CAF454C006ABECA /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		DBFABEE02CAFBEF1006ABECA /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		DBFABEE22CAFC48A006ABECA /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		DBFABEE42CAFC633006ABECA /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		DBFABEE72CAFE13E006ABECA /* CustomLoginCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginCard.swift; sourceTree = "<group>"; };
+		DBFABEE92CAFE2FC006ABECA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		DBFABEEB2CAFE39F006ABECA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		DBFABEED2CAFE756006ABECA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,7 @@
 		DB615D3D2CAF332F00CD1813 /* Katha */ = {
 			isa = PBXGroup;
 			children = (
+				DBFABEE62CAFE110006ABECA /* Components */,
 				DBFABECC2CAF4263006ABECA /* Info.plist */,
 				DBFABEDE2CAFAF2C006ABECA /* CustomFont */,
 				DBFABED92CAF446C006ABECA /* Extensions */,
@@ -97,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				DBFABEC82CAF373C006ABECA /* AuthView.swift */,
+				DBFABEE22CAFC48A006ABECA /* RegistrationView.swift */,
+				DBFABEED2CAFE756006ABECA /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,8 +142,19 @@
 			isa = PBXGroup;
 			children = (
 				DBFABEE02CAFBEF1006ABECA /* AuthViewModel.swift */,
+				DBFABEE42CAFC633006ABECA /* RegistrationViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DBFABEE62CAFE110006ABECA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DBFABEE72CAFE13E006ABECA /* CustomLoginCard.swift */,
+				DBFABEE92CAFE2FC006ABECA /* CustomButton.swift */,
+				DBFABEEB2CAFE39F006ABECA /* CustomTextField.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,10 +233,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBFABEE82CAFE13E006ABECA /* CustomLoginCard.swift in Sources */,
+				DBFABEEC2CAFE39F006ABECA /* CustomTextField.swift in Sources */,
 				DBFABEC92CAF373C006ABECA /* AuthView.swift in Sources */,
 				DBFABEDB2CAF4476006ABECA /* Color.swift in Sources */,
 				DBFABEE12CAFBEF1006ABECA /* AuthViewModel.swift in Sources */,
+				DBFABEEA2CAFE2FC006ABECA /* CustomButton.swift in Sources */,
+				DBFABEEE2CAFE756006ABECA /* LoginView.swift in Sources */,
+				DBFABEE32CAFC48A006ABECA /* RegistrationView.swift in Sources */,
 				DBFABEDD2CAF454C006ABECA /* Font.swift in Sources */,
+				DBFABEE52CAFC633006ABECA /* RegistrationViewModel.swift in Sources */,
 				DB615D412CAF332F00CD1813 /* ContentView.swift in Sources */,
 				DB615D3F2CAF332F00CD1813 /* KathaApp.swift in Sources */,
 			);
