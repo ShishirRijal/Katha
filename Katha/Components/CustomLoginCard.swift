@@ -8,11 +8,37 @@
 import SwiftUI
 
 struct CustomLoginCard: View {
+    
+    let name: String
+    let icon: ImageResource
+    
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        HStack(alignment: .center) {
+                Image(icon)
+                    .resizable()
+                    .aspectRatio(1, contentMode: .fit)
+                    .frame(width: 25)
+                Spacer()
+                Text(viewModel.isLoginMode ? "Sign in with \(name)" : "Sign up with \(name)")
+                    .font(.bodyFont())
+                    .foregroundColor(.theme.primary)
+                    
+                Spacer()
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 20)
+            .overlay(RoundedRectangle(cornerRadius: 40).stroke(Color.theme.primary, lineWidth: 2))
+        }
 }
 
 #Preview {
-    CustomLoginCard()
+    Group {
+        CustomLoginCard(name: "Facebook", icon: .facebook)
+            .environmentObject(AuthViewModel())
+        CustomLoginCard(name: "Google", icon: .google)
+            .environmentObject(AuthViewModel())
+    }
 }
+
