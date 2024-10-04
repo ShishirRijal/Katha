@@ -20,6 +20,7 @@
 		DBFABED82CAF441C006ABECA /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBFABED52CAF441C006ABECA /* Poppins-Medium.ttf */; };
 		DBFABEDB2CAF4476006ABECA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEDA2CAF4476006ABECA /* Color.swift */; };
 		DBFABEDD2CAF454C006ABECA /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEDC2CAF454C006ABECA /* Font.swift */; };
+		DBFABEE12CAFBEF1006ABECA /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEE02CAFBEF1006ABECA /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DBFABED52CAF441C006ABECA /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		DBFABEDA2CAF4476006ABECA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DBFABEDC2CAF454C006ABECA /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		DBFABEE02CAFBEF1006ABECA /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				DBFABECC2CAF4263006ABECA /* Info.plist */,
 				DBFABEDE2CAFAF2C006ABECA /* CustomFont */,
 				DBFABED92CAF446C006ABECA /* Extensions */,
+				DBFABEDF2CAFBEE4006ABECA /* ViewModels */,
 				DBFABEC72CAF3732006ABECA /* Views */,
 				DB615D3E2CAF332F00CD1813 /* KathaApp.swift */,
 				DB615D402CAF332F00CD1813 /* ContentView.swift */,
@@ -118,6 +121,14 @@
 				DBFABECF2CAF435E006ABECA /* PlayfairDisplay-Regular.ttf */,
 			);
 			path = CustomFont;
+			sourceTree = "<group>";
+		};
+		DBFABEDF2CAFBEE4006ABECA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DBFABEE02CAFBEF1006ABECA /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +209,7 @@
 			files = (
 				DBFABEC92CAF373C006ABECA /* AuthView.swift in Sources */,
 				DBFABEDB2CAF4476006ABECA /* Color.swift in Sources */,
+				DBFABEE12CAFBEF1006ABECA /* AuthViewModel.swift in Sources */,
 				DBFABEDD2CAF454C006ABECA /* Font.swift in Sources */,
 				DB615D412CAF332F00CD1813 /* ContentView.swift in Sources */,
 				DB615D3F2CAF332F00CD1813 /* KathaApp.swift in Sources */,
