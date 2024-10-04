@@ -9,16 +9,40 @@ import SwiftUI
 
 struct LibraryView: View {
     var body: some View {
-        HStack {
-            Text("Your Library")
-                .font(.logoFont())
-            .fontWeight(.bold)
+        ScrollView {
+            VStack(alignment: .leading) {
+                Header()
+                    .padding(.bottom, 20)
+                
+                ForEach(0..<4) { index in
+                        CustomArticleCard(article: dummyArticles[index], isBookmark: true)
+                        Divider()
+                        .padding(.vertical, 10)
+                }
+                
+                
+                
+            }
+            .padding(.horizontal)
+        }
+        .background(Color.theme.background
+            .ignoresSafeArea()
             
-            Image(systemName: "bookmark.fill")
-                .font(.title)
-                .foregroundColor(.theme.accent)
+        )
+    }
+    
+    private struct Header: View {
+        var body: some View {
+            HStack() {
+                Text("Your Library")
+                    .font(.custom(.poppinsMedium, size: 30))
+                    .fontWeight(.bold)
+                
+                Spacer()
+            }
         }
     }
+    
 }
 
 

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CustomArticleCard: View {
     let article: Article
+    let isBookmark: Bool
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -22,18 +23,22 @@ struct CustomArticleCard: View {
                     
                     // Introduction
                     ArticleIntroduction(title: article.title, introduction: article.introduction)
-                    Spacer()
                     
-                    // ArticleStats
-                    ArticleStats(date: article.date, claps: article.claps, comments: article.comments, memberOnly: article.memberOnly)
+                    
+                    if(!isBookmark) {
+                        Spacer()
+                        // ArticleStats
+                        ArticleStats(date: article.date, claps: article.claps, comments: article.comments, memberOnly: article.memberOnly)
+                    }
                 }
                 
-                ArticleThumbnail(thumbnail: article.thumbnail)
+                ArticleThumbnail(thumbnail: article.thumbnail, isBookmark: isBookmark)
                 
             }
             
         }
-        .frame(width: .infinity, height: 200)
+        .frame(width: .infinity, height: isBookmark ? 140 : 200)
+       
     }
     
     private struct ArticleAuthor: View {
@@ -69,6 +74,7 @@ struct CustomArticleCard: View {
     
     private struct ArticleThumbnail: View {
         let thumbnail: String
+        let isBookmark: Bool
         
         var body: some View {
             VStack {
@@ -79,12 +85,15 @@ struct CustomArticleCard: View {
                     .clipShape(RoundedRectangle(cornerRadius: 5))
                 
                 Spacer()
-                HStack {
-                    Image(systemName: "ellipsis.circle")
-                    Spacer().frame(width: 30)
-                    Image(systemName: "ellipsis")
+                if(!isBookmark) {
+                    HStack {
+                        Image(systemName: "ellipsis.circle")
+                        Spacer().frame(width: 30)
+                        Image(systemName: "ellipsis")
+                    }
+                    .foregroundColor(.theme.gray)
                 }
-                .foregroundColor(.theme.gray)
+                
             }
         }
     }
@@ -139,5 +148,5 @@ struct CustomArticleCard: View {
 
 
 #Preview {
-    CustomArticleCard(article: dummyArticles.first!)
+    CustomArticleCard(article: dummyArticles.first!, isBookmark: true)
 }
