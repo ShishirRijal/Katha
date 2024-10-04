@@ -52,8 +52,9 @@ The project will follow the **MVVM** architecture, ensuring separation of concer
 ## Milestones and Progress
 
 ### 1️⃣ User Authentication
-- [ ] **Registration Screen**: Design and build the UI for user registration.
-- [ ] **Login Screen**: Design and build the UI for login.
+- [x] **Auth Screen**: Design and build the UI for inital auth screen showing all forms of authentications.
+- [x] **Registration Screen**: Design and build the UI for user registration.
+- [x] **Login Screen**: Design and build the UI for login.
 
 ### 2️⃣ Article Management
 - [ ] **Write Article Screen**: Create a markdown editor for articles.
