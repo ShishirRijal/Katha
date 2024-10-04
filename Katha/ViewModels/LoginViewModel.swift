@@ -13,7 +13,7 @@ class LoginViewModel: ObservableObject {
     @Published var email: String = ""
 
     func login() {
-        debugPrint("Log in with email...")
+        debugPrint("Logging in with email...")
     }
     
 }

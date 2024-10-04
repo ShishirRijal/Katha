@@ -59,7 +59,10 @@ private struct DescriptionView: View {
 }
 
 private struct LoginOptionsView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
     var body: some View {
+
         Group {
             CustomLoginCard(name: "Google", icon: .google)
             
@@ -67,15 +70,13 @@ private struct LoginOptionsView: View {
 
             CustomLoginCard(name: "Apple", icon: .facebook)
             
-            NavigationLink(destination: RegistrationView()) {
+            NavigationLink(destination: authViewModel.isLoginMode ? AnyView(LoginView()) : AnyView(RegistrationView())) {
                 CustomLoginCard(name: "Email", icon: .email)
             }
             
         }
         .padding(.bottom, 5)
     }
-    
-    
 }
 
 

@@ -17,15 +17,17 @@ struct RegistrationView: View {
                 
                 // Back Button
                 BackButton()
+                
                 // Title View
                 TitleView()
+                
                 // Form
                 RegistrationFormView(registrationViewModel: registrationViewModel)
+                
                 // Create Account Button
                 CustomButton(title: "Create account") {
-                               // Action to perform on button press
-                               print("Sign Up button pressed")
-                           }
+                    registrationViewModel.register()
+                }
                 
                 Spacer()
                 
