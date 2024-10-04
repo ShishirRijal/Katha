@@ -28,6 +28,12 @@
 		DBFABEEC2CAFE39F006ABECA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEEB2CAFE39F006ABECA /* CustomTextField.swift */; };
 		DBFABEEE2CAFE756006ABECA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEED2CAFE756006ABECA /* LoginView.swift */; };
 		DBFABEF02CAFE964006ABECA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEEF2CAFE964006ABECA /* LoginViewModel.swift */; };
+		DBFABEF22CB012CF006ABECA /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEF12CB012CF006ABECA /* MainTabView.swift */; };
+		DBFABEF42CB013F3006ABECA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEF32CB013F3006ABECA /* HomeView.swift */; };
+		DBFABEF62CB01690006ABECA /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEF52CB01690006ABECA /* ExploreView.swift */; };
+		DBFABEF82CB016CE006ABECA /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEF72CB016CE006ABECA /* LibraryView.swift */; };
+		DBFABEFA2CB0179E006ABECA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEF92CB0179E006ABECA /* ProfileView.swift */; };
+		DBFABEFC2CB02D72006ABECA /* CustomArticleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEFB2CB02D72006ABECA /* CustomArticleCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +60,12 @@
 		DBFABEEB2CAFE39F006ABECA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DBFABEED2CAFE756006ABECA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DBFABEEF2CAFE964006ABECA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		DBFABEF12CB012CF006ABECA /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		DBFABEF32CB013F3006ABECA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DBFABEF52CB01690006ABECA /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		DBFABEF72CB016CE006ABECA /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		DBFABEF92CB0179E006ABECA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DBFABEFB2CB02D72006ABECA /* CustomArticleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomArticleCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +105,7 @@
 				DBFABEDF2CAFBEE4006ABECA /* ViewModels */,
 				DBFABEC72CAF3732006ABECA /* Views */,
 				DB615D3E2CAF332F00CD1813 /* KathaApp.swift */,
+				DBFABEF12CB012CF006ABECA /* MainTabView.swift */,
 				DB615D402CAF332F00CD1813 /* ContentView.swift */,
 				DB615D422CAF333000CD1813 /* Assets.xcassets */,
 				DB615D442CAF333000CD1813 /* Preview Content */,
@@ -114,6 +127,10 @@
 				DBFABEC82CAF373C006ABECA /* AuthView.swift */,
 				DBFABEE22CAFC48A006ABECA /* RegistrationView.swift */,
 				DBFABEED2CAFE756006ABECA /* LoginView.swift */,
+				DBFABEF32CB013F3006ABECA /* HomeView.swift */,
+				DBFABEF52CB01690006ABECA /* ExploreView.swift */,
+				DBFABEF72CB016CE006ABECA /* LibraryView.swift */,
+				DBFABEF92CB0179E006ABECA /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +173,7 @@
 				DBFABEE72CAFE13E006ABECA /* CustomLoginCard.swift */,
 				DBFABEE92CAFE2FC006ABECA /* CustomButton.swift */,
 				DBFABEEB2CAFE39F006ABECA /* CustomTextField.swift */,
+				DBFABEFB2CB02D72006ABECA /* CustomArticleCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -239,14 +257,20 @@
 				DBFABEE82CAFE13E006ABECA /* CustomLoginCard.swift in Sources */,
 				DBFABEEC2CAFE39F006ABECA /* CustomTextField.swift in Sources */,
 				DBFABEC92CAF373C006ABECA /* AuthView.swift in Sources */,
+				DBFABEF42CB013F3006ABECA /* HomeView.swift in Sources */,
 				DBFABEDB2CAF4476006ABECA /* Color.swift in Sources */,
 				DBFABEE12CAFBEF1006ABECA /* AuthViewModel.swift in Sources */,
+				DBFABEF62CB01690006ABECA /* ExploreView.swift in Sources */,
 				DBFABEEA2CAFE2FC006ABECA /* CustomButton.swift in Sources */,
+				DBFABEFC2CB02D72006ABECA /* CustomArticleCard.swift in Sources */,
 				DBFABEEE2CAFE756006ABECA /* LoginView.swift in Sources */,
+				DBFABEF82CB016CE006ABECA /* LibraryView.swift in Sources */,
+				DBFABEFA2CB0179E006ABECA /* ProfileView.swift in Sources */,
 				DBFABEE32CAFC48A006ABECA /* RegistrationView.swift in Sources */,
 				DBFABEF02CAFE964006ABECA /* LoginViewModel.swift in Sources */,
 				DBFABEDD2CAF454C006ABECA /* Font.swift in Sources */,
 				DBFABEE52CAFC633006ABECA /* RegistrationViewModel.swift in Sources */,
+				DBFABEF22CB012CF006ABECA /* MainTabView.swift in Sources */,
 				DB615D412CAF332F00CD1813 /* ContentView.swift in Sources */,
 				DB615D3F2CAF332F00CD1813 /* KathaApp.swift in Sources */,
 			);
