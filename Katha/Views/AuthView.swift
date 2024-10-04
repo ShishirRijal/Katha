@@ -13,22 +13,24 @@ struct AuthView: View {
     @StateObject private var authViewModel = AuthViewModel()
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .center) {
-                HeaderView()
-                DescriptionView()
-                LoginOptionsView()
-                AccountToggleView()
-                if !authViewModel.isLoginMode {
-                    TermsView()
+        NavigationView {
+            ScrollView {
+                VStack(alignment: .center) {
+                    HeaderView()
+                    DescriptionView()
+                    LoginOptionsView()
+                    AccountToggleView()
+                    if !authViewModel.isLoginMode {
+                        TermsView()
+                    }
                 }
+                .padding()
             }
-            .padding()
+            .environmentObject(authViewModel)
         }
-        .environmentObject(authViewModel)
+        .navigationBarBackButtonHidden(true)
     }
 }
-
 // MARK: - Subviews
 
 private struct HeaderView: View {
@@ -60,13 +62,22 @@ private struct LoginOptionsView: View {
     var body: some View {
         Group {
             CustomLoginCard(name: "Google", icon: .google)
-            CustomLoginCard(name: "Facebook", icon: .facebook)
-            CustomLoginCard(name: "Apple", icon: .apple)
-            CustomLoginCard(name: "Email", icon: .email)
+            
+            CustomLoginCard(name: "Facbook", icon: .facebook)
+
+            CustomLoginCard(name: "Apple", icon: .facebook)
+            
+            NavigationLink(destination: RegistrationView()) {
+                CustomLoginCard(name: "Email", icon: .email)
+            }
+            
         }
         .padding(.bottom, 5)
     }
+    
+    
 }
+
 
 private struct AccountToggleView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
@@ -100,32 +111,10 @@ private struct TermsView: View {
                 + Text(" applies to you.")
         }
         .multilineTextAlignment(.center)
+        .font(.bodyFont(size: 12))
     }
 }
 
-// MARK: - CustomLoginCard
-
-struct CustomLoginCard: View {
-    
-    let name: String
-    let icon: ImageResource
-    @EnvironmentObject var viewModel: AuthViewModel
-    
-    var body: some View {
-        HStack(alignment: .center) {
-            Image(icon)
-                .resizable()
-                .aspectRatio(1, contentMode: .fit)
-                .frame(width: 25)
-            Spacer()
-            Text(viewModel.isLoginMode ? "Sign in with \(name)" : "Sign up with \(name)")
-            Spacer()
-        }
-        .padding(.vertical, 12)
-        .padding(.horizontal, 20)
-        .overlay(RoundedRectangle(cornerRadius: 40).stroke(.primary, lineWidth: 2))
-    }
-}
 
 #Preview {
     AuthView()
