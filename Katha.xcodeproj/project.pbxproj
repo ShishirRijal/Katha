@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DB32CCEE2CB558F900AB5887 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CCED2CB558F900AB5887 /* ArticleDetailView.swift */; };
 		DB32CCF02CB5725800AB5887 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CCEF2CB5725800AB5887 /* Author.swift */; };
+		DB32CCF22CB5861D00AB5887 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CCF12CB5861D00AB5887 /* Date.swift */; };
 		DB615D3F2CAF332F00CD1813 /* KathaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB615D3E2CAF332F00CD1813 /* KathaApp.swift */; };
 		DB615D412CAF332F00CD1813 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB615D402CAF332F00CD1813 /* ContentView.swift */; };
 		DB615D432CAF333000CD1813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB615D422CAF333000CD1813 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		DB32CCED2CB558F900AB5887 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		DB32CCEF2CB5725800AB5887 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		DB32CCF12CB5861D00AB5887 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		DB615D3B2CAF332F00CD1813 /* Katha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Katha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB615D3E2CAF332F00CD1813 /* KathaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KathaApp.swift; sourceTree = "<group>"; };
 		DB615D402CAF332F00CD1813 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				DBFABEDA2CAF4476006ABECA /* Color.swift */,
 				DBFABEDC2CAF454C006ABECA /* Font.swift */,
+				DB32CCF12CB5861D00AB5887 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB32CCF22CB5861D00AB5887 /* Date.swift in Sources */,
 				DBFABEE82CAFE13E006ABECA /* CustomLoginCard.swift in Sources */,
 				DBFABEEC2CAFE39F006ABECA /* CustomTextField.swift in Sources */,
 				DBFABEC92CAF373C006ABECA /* AuthView.swift in Sources */,

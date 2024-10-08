@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ArticleDetailView: View {
-    let tags = ["iOS", "Swift", "Structure", "Architecture", "Design", "Programming"]
-    
+    let article: Article
+        
     var body: some View {
         NavigationView {
             ScrollView {
@@ -17,14 +17,14 @@ struct ArticleDetailView: View {
                 VStack (alignment: .leading) {
                     
                     // Article Title
-                    Text("Swift Structs: Unleash Your Inner Code Architect🏗️")
+                    Text(article.title)
                         .font(.custom(.poppinsBold, size: 30))
                     
                     // Article Author
-                    ArticleAuthorHeader()
+                    ArticleAuthorHeader(article: article)
                     
                     // Thumbnail
-                    Image("thumbnail03")
+                    Image(article.thumbnail)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: .infinity)
@@ -34,13 +34,13 @@ struct ArticleDetailView: View {
                     
                     
                     // Article Detail
-                    Text("If you’re learning Swift, you’ve probably heard the term “struct” a lot. Structs are one of the core building blocks in Swift, and they’re incredibly powerful! This article will guide you through everything you need to know about structs, from the basics to more advanced concepts, and we’ll even throw in some real-world examples along the way.\n**What Exactly Is a Struct?**\nWhen I first heard about structs, I imagined them as LEGO bricks for code. And you know what? That’s not far off! In Swift, a struct (short for structure) is like a blueprint for creating your own custom data types. It’s a way to bundle related properties and methods together into a neat package.\nYou define a struct, and then you can create instances (objects) from it. Structs in Swift are extremely useful for modeling simple data types, like a person’s information, a point in 2D space, or a rectangle’s dimensions.\nIn some other programming languages, you may have seen similar things called classes, but don’t worry — we’ll explore the differences later.")
+                    Text(article.introduction)
                     
                     
                     // Tags
                     ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 20) {
-                                    ForEach(tags, id: \.self) {tag in
+                                    ForEach(article.tags, id: \.self) {tag in
                                             CustomTagChip(tag)
                                     }
                                 
@@ -50,7 +50,7 @@ struct ArticleDetailView: View {
                     
 
                     // Author Detail
-                    AuthorDetail()
+                    AuthorDetail(author: article.author)
                     
                     
                     VStack (alignment: .center) {
@@ -83,9 +83,6 @@ struct ArticleDetailView: View {
     }
 }
 
-#Preview {
-    ArticleDetailView()
-}
 
 struct CustomTagChip: View {
     var label: String?
@@ -117,10 +114,12 @@ struct CustomTagChip: View {
 }
 
 struct AuthorDetail: View {
+    let author: Author
+    
     var body: some View {
         VStack (alignment: .leading) {
             HStack {
-                Image("author")
+                Image(author.image)
                     .resizable()
                     .aspectRatio(1, contentMode: .fill)
                     .frame(width: 90)
@@ -145,34 +144,41 @@ struct AuthorDetail: View {
                 }
                 
             }
-            Text("Written by Shishir Rijal")
+            Text("Written by \(author.name)")
                 .font(.custom(.poppinsMedium, size: 20))
-            Text("293 Followers")
+            Text("\(author.followers) Followers")
             Spacer().frame(height: 20)
                 .font(.bodyFont(size: 18))
-            Text("Mr. Rijal is a computer engineering student passionate about technology specializing in Mobile App Development and Deep Learning.")
+            Text(author.bio)
         }
         .padding(.vertical)
     }
 }
 
 struct ArticleAuthorHeader: View {
+    let article: Article
     var body: some View {
+        
         HStack {
-            Image("author")
+            Image(article.author.image)
                 .resizable()
                 .aspectRatio(1, contentMode: .fill)
                 .clipShape(Circle())
                 .frame(width: 60)
             
             VStack (alignment: .leading) {
-                Text("Shishir Rijal")
+                Text(article.author.name)
                     .font(.bodyFont())
                     .fontWeight(.medium)
-                Text("6 min read • 3 days ago")
+                Text("\(article.timeToRead()) min read • \(article.date.timeAgoDisplay())")
                     .font(.bodyFont())
                 
             }
         }
     }
+}
+
+
+#Preview {
+    ArticleDetailView(article: dummyArticles[1])
 }
