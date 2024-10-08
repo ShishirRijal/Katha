@@ -18,8 +18,10 @@ struct ColorTheme {
     let primary = Color("PrimaryColor")
     let accent = Color("AccentColor")
     let background = Color("BackgroundColor")
+    let reverseBackgroundColor = Color("ReverseBackgroundColor")
     let white = Color("WhiteColor")
     let black = Color("BlackColor")
     let gray = Color("GrayColor")
     let lightGray = Color("LightGrayColor")
 }
+
