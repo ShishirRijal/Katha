@@ -11,6 +11,7 @@ import Foundation
 struct Article: Identifiable {
     var id = UUID()
     var author: String
+    var authorImage: String
     var category: String?
     var title: String
     var introduction: String
@@ -19,11 +20,14 @@ struct Article: Identifiable {
     var comments: String
     var thumbnail: String
     var memberOnly: Bool = false
+    var tags: [String]?
+    
 }
 
 let dummyArticles: [Article] = [
     Article(
         author: "Sandhya Sharma",
+        authorImage: "author",
         category: "Data Science",
         title: "Mobile Developers Have Lost Their Glory, And Here's Why",
         introduction: "I recently saw this research published in indeed.com where the survey among developers showcased the...",
@@ -31,19 +35,23 @@ let dummyArticles: [Article] = [
         claps: "2.7K",
         comments: "1.3K",
         thumbnail: "thumbnail01",
-        memberOnly: true
+        memberOnly: true,
+        tags: ["ios", "Dev"]
     ),
     Article(
         author: "Ravi Thapa",
+        authorImage: "author",
         title: "The Rise of Full-Stack Developers in 2024",
         introduction: "In recent years, full-stack developers have become an integral part of any development team...",
         date: "Feb 10",
         claps: "5.1K",
         comments: "900",
-        thumbnail: "thumbnail02"
+        thumbnail: "thumbnail02",
+        tags: ["ios"]
     ),
     Article(
         author: "Anjali Maharjan",
+        authorImage: "author",
         category: "Artificial Intelligence",
         title: "How AI is Transforming Healthcare",
         introduction: "Artificial intelligence is not just a buzzword anymore, it’s reshaping industries, particularly healthcare...",
@@ -55,16 +63,19 @@ let dummyArticles: [Article] = [
     ),
     Article(
         author: "Binod Karki",
+        authorImage: "author",
         category: "Machine Learning",
         title: "Deep Learning vs. Machine Learning: What's the Difference?",
         introduction: "Many people use the terms 'deep learning' and 'machine learning' interchangeably, but they are quite different...",
         date: "Mar 20",
         claps: "4.2K",
         comments: "1.5K",
-        thumbnail: "thumbnail04"
+        thumbnail: "thumbnail04",
+        tags: ["ios", "Swift"]
     ),
     Article(
         author: "Sita Sharma",
+        authorImage: "author",
         category: "Blockchain",
         title: "The Future of Blockchain in Financial Technology",
         introduction: "Blockchain has revolutionized how we think about finance and security. Here's why it's here to stay...",
@@ -72,10 +83,12 @@ let dummyArticles: [Article] = [
         claps: "6.3K",
         comments: "2.8K",
         thumbnail: "thumbnail01",
-        memberOnly: true
+        memberOnly: true,
+        tags: ["Dev"]
     ),
     Article(
         author: "Hari Adhikari",
+        authorImage: "author",
         category: "Cybersecurity",
         title: "Top Cybersecurity Threats in 2024",
         introduction: "With more data being generated every second, cybersecurity threats are evolving faster than ever...",
@@ -86,6 +99,7 @@ let dummyArticles: [Article] = [
     ),
     Article(
         author: "Rajesh Kumar",
+        authorImage: "author",
         category: "Cloud Computing",
         title: "Why Cloud-Native is the Future of Software Development",
         introduction: "Cloud-native architecture is gaining traction as businesses look for scalable, efficient, and flexible solutions...",
@@ -97,16 +111,19 @@ let dummyArticles: [Article] = [
     ),
     Article(
         author: "Nisha Gurung",
+        authorImage: "author",
         category: "DevOps",
         title: "How DevOps Accelerates Digital Transformation",
         introduction: "DevOps is not just a set of tools or processes—it's a culture shift that enables faster and more reliable software delivery...",
         date: "Jul 15",
         claps: "5.5K",
         comments: "1.8K",
-        thumbnail: "thumbnail04"
+        thumbnail: "thumbnail04",
+        tags: ["ios", "Dev"]
     ),
     Article(
         author: "Ramesh Bhandari",
+        authorImage: "author",
         category: "Mobile Development",
         title: "Building Cross-Platform Apps: Flutter vs. React Native",
         introduction: "Cross-platform development has become a crucial part of mobile app development. Here's how Flutter and React Native stack up...",
@@ -117,6 +134,7 @@ let dummyArticles: [Article] = [
     ),
     Article(
         author: "Manisha Dhakal",
+        authorImage: "author",
         category: "UI/UX Design",
         title: "Why User Experience is More Important Than Ever",
         introduction: "In the digital age, users have come to expect seamless experiences from the products they interact with...",
@@ -124,7 +142,8 @@ let dummyArticles: [Article] = [
         claps: "8.5K",
         comments: "4.2K",
         thumbnail: "thumbnail02",
-        memberOnly: true
+        memberOnly: true,
+        tags: ["ios", "Dev"]
     )
 ]
 
