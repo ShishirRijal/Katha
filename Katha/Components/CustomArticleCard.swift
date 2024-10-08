@@ -15,7 +15,7 @@ struct CustomArticleCard: View {
     var body: some View {
         VStack(alignment: .leading) {
             
-            ArticleAuthor(author: article.author, category: article.category)
+            ArticleAuthor(author: article.author.name, category: article.category)
             
             HStack {
                 
@@ -148,5 +148,5 @@ struct CustomArticleCard: View {
 
 
 #Preview {
-    CustomArticleCard(article: dummyArticles.first!, isBookmark: true)
+    CustomArticleCard(article: dummyArticles.first!, isBookmark: false)
 }
