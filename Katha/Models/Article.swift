@@ -14,13 +14,24 @@ struct Article: Identifiable {
     var category: String?
     var title: String
     var introduction: String
-    var date: String
+    var date: Date
     var claps: String
     var comments: String
     var thumbnail: String
     var memberOnly: Bool = false
-    var tags: [String]?
+    var tags: [String] = []
 }
+
+
+extension Article {
+    func timeToRead() -> Int {
+        return self.introduction.count/(60*2)
+    }
+}
+
+
+
+let isoDateFormatter = ISO8601DateFormatter()
 
 
 let dummyArticles: [Article] = [
@@ -35,7 +46,7 @@ let dummyArticles: [Article] = [
 
         In this article, I will explore the reasons behind this shift and what it means for aspiring mobile developers.
         """,
-        date: "Jan 15",
+        date: isoDateFormatter.date(from: "2024-01-15T00:00:00Z")!,
         claps: "2.7K",
         comments: "1.3K",
         thumbnail: "thumbnail01",
@@ -53,7 +64,7 @@ let dummyArticles: [Article] = [
         This article discusses the skills necessary to become a full-stack developer and the opportunities available
         in the job market for these versatile professionals.
         """,
-        date: "Feb 10",
+        date: isoDateFormatter.date(from: "2024-02-10T00:00:00Z")!,
         claps: "5.1K",
         comments: "900",
         thumbnail: "thumbnail02",
@@ -70,7 +81,7 @@ let dummyArticles: [Article] = [
         In this article, I will discuss the various applications of AI in healthcare and its potential to revolutionize
         patient care.
         """,
-        date: "Mar 05",
+        date: isoDateFormatter.date(from: "2024-02-10T00:00:00Z")!,
         claps: "3.5K",
         comments: "2.1K",
         thumbnail: "thumbnail03",
@@ -88,7 +99,7 @@ let dummyArticles: [Article] = [
         In this article, I will break down the differences between these two fields and explain why understanding them
         is crucial for aspiring data scientists.
         """,
-        date: "Mar 20",
+        date: isoDateFormatter.date(from: "2024-02-10T00:00:00Z")!,
         claps: "4.2K",
         comments: "1.5K",
         thumbnail: "thumbnail04",
@@ -105,7 +116,7 @@ let dummyArticles: [Article] = [
         In this article, I will discuss how blockchain technology is being integrated into financial services and
         what the future holds for this transformative technology.
         """,
-        date: "Apr 12",
+        date: isoDateFormatter.date(from: "2024-02-10T00:00:00Z")!,
         claps: "6.3K",
         comments: "2.8K",
         thumbnail: "thumbnail01",
@@ -123,7 +134,7 @@ let dummyArticles: [Article] = [
         This article explores the top cybersecurity threats of the year and offers strategies for organizations
         to protect themselves against these risks.
         """,
-        date: "May 02",
+        date: isoDateFormatter.date(from: "2024-02-10T00:00:00Z")!,
         claps: "3.7K",
         comments: "1.9K",
         thumbnail: "thumbnail02",
@@ -140,7 +151,7 @@ let dummyArticles: [Article] = [
         In this article, I will discuss the principles of cloud-native development and how they can transform
         software delivery.
         """,
-        date: "Jun 10",
+        date: isoDateFormatter.date(from: "2024-02-10T00:00:00Z")!,
         claps: "4.9K",
         comments: "1.7K",
         thumbnail: "thumbnail03",
@@ -159,7 +170,7 @@ let dummyArticles: [Article] = [
         This article explores how adopting a DevOps approach can lead to significant improvements in productivity
         and quality.
         """,
-        date: "Jul 15",
+        date: isoDateFormatter.date(from: "2024-02-10T00:00:00Z")!,
         claps: "5.5K",
         comments: "1.8K",
         thumbnail: "thumbnail04",
@@ -177,7 +188,7 @@ let dummyArticles: [Article] = [
         In this article, I will compare both frameworks, highlighting their strengths and weaknesses
         to help you make an informed decision.
         """,
-        date: "Aug 22",
+        date: isoDateFormatter.date(from: "2024-02-10T00:00:00Z")!,
         claps: "7.2K",
         comments: "3.1K",
         thumbnail: "thumbnail01",
@@ -194,7 +205,7 @@ let dummyArticles: [Article] = [
         This article discusses the importance of UX design and how it can significantly impact customer satisfaction
         and retention.
         """,
-        date: "Sep 30",
+        date: isoDateFormatter.date(from: "2024-02-10T00:00:00Z")!,
         claps: "8.5K",
         comments: "4.2K",
         thumbnail: "thumbnail02",
