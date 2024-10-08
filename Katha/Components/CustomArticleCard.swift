@@ -28,7 +28,7 @@ struct CustomArticleCard: View {
                     if(!isBookmark) {
                         Spacer()
                         // ArticleStats
-                        ArticleStats(date: article.date, claps: article.claps, comments: article.comments, memberOnly: article.memberOnly)
+                        ArticleStats(date: article.date.toMonthAndDayFormat(), claps: article.claps, comments: article.comments, memberOnly: article.memberOnly)
                     }
                 }
                 
