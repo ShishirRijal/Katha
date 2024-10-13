@@ -92,6 +92,13 @@ Feel free to fork the project, submit a pull request, or raise an issue to impro
 <img width="749" alt="Screenshot 2024-10-04 at 10 41 23 AM" src="https://github.com/user-attachments/assets/9169d658-c302-4f0a-ad4f-cffa1b797646">
 <img width="630" alt="Screenshot 2024-10-04 at 3 30 39 PM" src="https://github.com/user-attachments/assets/ded08b27-03f3-4bbf-848e-d0883153c0db">
 <img width="629" alt="Screenshot 2024-10-04 at 3 31 42 PM" src="https://github.com/user-attachments/assets/823e19bf-07a4-4027-abe3-90913abb554e">
+<img width="664" alt="Screenshot 2024-10-14 at 12 05 28 AM" src="https://github.com/user-attachments/assets/432b090b-605f-4ca3-a542-1781533a3248">
+
+<img width="663" alt="Screenshot 2024-10-14 at 12 07 24 AM" src="https://github.com/user-attachments/assets/a1958d86-9903-413a-994f-65228c112b02">
+
+<img width="661" alt="Screenshot 2024-10-14 at 12 08 20 AM" src="https://github.com/user-attachments/assets/9594f8b1-9527-42e1-920c-b907cfc76ea6">
+
+<img width="339" alt="Screenshot 2024-10-14 at 12 10 20 AM" src="https://github.com/user-attachments/assets/0e2d2f98-689e-46fc-b595-7c00425a2f37">
 
 
 
