@@ -48,7 +48,7 @@ struct ExploreView: View {
                 Spacer()
                 
             }
-            .padding()
+            .padding(.horizontal)
         }
     }
     
