@@ -44,9 +44,9 @@ extension Date {
             return "Just now"
         }
     
-    func toMonthAndDayFormat() -> String {
+    func toMonthAndDayFormat(shortMonth: Bool = false) -> String {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM dd" // Full month name and day
+        dateFormatter.dateFormat = shortMonth ? "MMM dd" : "MMMM dd" // Full month name and day
             return dateFormatter.string(from: self)
         }
 }

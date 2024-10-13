@@ -28,7 +28,7 @@ struct CustomArticleCard: View {
                     if(!isBookmark) {
                         Spacer()
                         // ArticleStats
-                        ArticleStats(date: article.date.toMonthAndDayFormat(), claps: article.claps, comments: article.comments, memberOnly: article.memberOnly)
+                        ArticleStats(date: article.date.toMonthAndDayFormat(shortMonth: true), claps: article.claps, comments: article.comments, memberOnly: article.memberOnly)
                     }
                 }
                 
@@ -113,12 +113,16 @@ struct CustomArticleCard: View {
                 
                 Text(date)
                 
-                Image(systemName: "hands.clap.fill")
-                Text(claps)
+                HStack {
+                    Image(systemName: "hands.clap.fill")
+                    Text(claps)
+                }
                 
-                Image(systemName: "message.fill")
-                    .scaleEffect(x: -1, y: 1)
-                Text(comments)
+                HStack {
+                    Image(systemName: "message.fill")
+                        .scaleEffect(x: -1, y: 1)
+                    Text(comments)
+                }
             }
             .foregroundColor(.theme.gray)
         }
