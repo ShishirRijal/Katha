@@ -1,4 +1,10 @@
-# Katha: A Medium-like App in SwiftUI
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/02131ae0-6b66-451a-b86f-24dc926bccdd" alt="book" width="100" height="100">
+</div>
+
+
+# <img src="https://github.com/user-attachments/assets/02131ae0-6b66-451a-b86f-24dc926bccdd" alt="book" width="20" height="20"> Katha: A Medium Clone in SwiftUI
+
 
 **Katha** is a SwiftUI-based learning project inspired by [Medium.com](https://medium.com). This app will implement key features like registration, login, writing and formatting articles, role-based access for readers and authors, and the ability to mark favorite articles, all while using the **MVVM (Model-View-ViewModel)** architecture.
 
@@ -59,7 +65,7 @@ The project will follow the **MVVM** architecture, ensuring separation of concer
 ### 2️⃣ Article Management
 - [ ] **Write Article Screen**: Create a markdown editor for articles.
 - [ ] **Article Formatting**: Implement bold, italic, headings, lists, links, and other markdown-based formatting.
-- [ ] **Read Article Screen**: Build the UI to read and display articles beautifully.
+- [x] **Read Article Screen**: Build the UI to read and display articles beautifully.
 
 ### 3️⃣ Roles and Access Control
 - [ ] **Author Role**: Restrict the ability to write articles to users with an author role.
@@ -99,6 +105,7 @@ Feel free to fork the project, submit a pull request, or raise an issue to impro
 <img width="661" alt="Screenshot 2024-10-14 at 12 08 20 AM" src="https://github.com/user-attachments/assets/9594f8b1-9527-42e1-920c-b907cfc76ea6">
 
 <img width="339" alt="Screenshot 2024-10-14 at 12 10 20 AM" src="https://github.com/user-attachments/assets/0e2d2f98-689e-46fc-b595-7c00425a2f37">
+<img width="625" alt="Screenshot 2024-10-14 at 1 59 51 AM" src="https://github.com/user-attachments/assets/1f7ea8f2-1c74-4ca0-8113-bfc32d97b5d2">
 
 
 
