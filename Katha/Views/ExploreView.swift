@@ -82,7 +82,7 @@ struct SearchBarView: View {
             
         }
         .padding()
-        .background(Color(.systemGray5))
+        .background(Color(.systemGray6))
         .cornerRadius(5)
     }
 }
@@ -103,7 +103,7 @@ struct PopularSearch: View {
                     Text(item)
                         .padding(.vertical, 10)
                         .padding(.horizontal, 20)
-                        .background(Color(.systemGray5))
+                        .background(Color(.systemGray6))
                         .foregroundColor(.primary)
                         .cornerRadius(30)
                 }
