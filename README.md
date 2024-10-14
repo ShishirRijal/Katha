@@ -44,7 +44,7 @@ The project will follow the **MVVM** architecture, ensuring separation of concer
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/katha.git
+   git clone https://github.com/ShishirRijal/katha.git
    ```
 
 2. **Install dependencies** (if using any package manager like **Cocoapods** or **SPM**):
