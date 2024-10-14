@@ -15,7 +15,6 @@ struct Author: Identifiable {
     var bio: String
 }
 
-
 let authors: [Author] = [
     Author(
         image: "author",
@@ -79,3 +78,26 @@ let authors: [Author] = [
          bio: "UI/UX designer committed to creating user-centered designs for modern applications."
      )
 ]
+
+
+struct User {
+    let name: String
+    let username: String
+    let bio: String
+    let profileImageURL: String
+    let articleCount: Int
+    let followerCount: Int
+    let followingCount: Int
+    let recentArticles: [Article]
+}
+
+let dummyUser = User(
+    name: "Shishir Rijal",
+    username: "@rijal.shishir",
+    bio: "Software Engineer passionate about building cool things.",
+    profileImageURL: "author",
+    articleCount: 10,
+    followerCount: 100,
+    followingCount: 50,
+    recentArticles: [dummyArticles[0], dummyArticles[2], dummyArticles[4], dummyArticles[5]]
+)
