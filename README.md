@@ -8,21 +8,6 @@
 
 **Katha** is a SwiftUI-based learning project inspired by [Medium.com](https://medium.com). This app will implement key features like registration, login, writing and formatting articles, role-based access for readers and authors, and the ability to mark favorite articles, all while using the **MVVM (Model-View-ViewModel)** architecture.
 
-## Features
-
-### 🌟 Core Features (MVP)
-- 🔐 **Registration**: Users can create an account using their email and password.
-- 🔑 **Login**: Registered users can log in to access the platform.
-- ✍️ **Write Articles**: Authors can write articles, with full-featured markup, formatting, and previews.
-- 📖 **Read Articles**: Users can browse and read published articles.
-- 📝 **Roles (Author vs. Reader)**: Define roles to differentiate between article authors and readers.
-- ⭐ **Mark as Favorite**: Allow users to mark their favorite articles.
-- 💾 **Save Favorites to Local Storage**: Store users' favorite articles locally using CoreData.
-
-### 🌐 Networking and Persistence
-- 🔗 **Networking Layer**: Implement a robust networking layer to fetch and post data using **URLSession** or **Alamofire**.
-- 🚫 **Offline Support**: Handle exceptions and show friendly error messages when the user is offline.
-- 🗃️ **Persistence (Core Data)**: Save data locally to enable offline support and favorite articles storage.
 
 ## Architecture: MVVM
 The project will follow the **MVVM** architecture, ensuring separation of concerns and maintainable code. Here's how each layer will function:
@@ -31,14 +16,7 @@ The project will follow the **MVVM** architecture, ensuring separation of concer
 - **View**: SwiftUI views that display data.
 - **ViewModel**: The logic and data-binding layer that communicates between the view and the model.
 
-<!---
-## Best Coding Practices
-- Use **Dependency Injection** for better code testability and maintainability.
-- **Error Handling**: Gracefully handle networking and CoreData errors.
-- **Local Storage**: Save user preferences and favorite articles using **CoreData**.
-- **EnvironmentObject**: Manage global state for logged-in users, articles, etc., with SwiftUI's `@EnvironmentObject`.
-- **Async Operations**: Perform async network operations and handle loading states.
--->
+
 
 ## Project Setup
 
@@ -55,6 +33,8 @@ The project will follow the **MVVM** architecture, ensuring separation of concer
 3. **Run the project**:
    Open `Katha.xcodeproj` in Xcode and hit **Cmd+R** to build and run the app.
 
+
+<!--
 ## Milestones and Progress
 
 ### 1️⃣ User Authentication
@@ -86,6 +66,8 @@ Feel free to fork the project, submit a pull request, or raise an issue to impro
 - [ ] Implement **push notifications** to alert users about new articles or updates.
 - [ ] Add **commenting and social features** for readers to interact with articles.
 - [ ] Introduce **user profiles** and **author bios**.
+
+-->
 
   
 ### Technologies Used
