@@ -11,7 +11,7 @@ import SwiftUI
 struct KathaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          MainTabView()
                 .environment(\.font, .bodyFont())
         }
     }

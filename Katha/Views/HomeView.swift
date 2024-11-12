@@ -32,7 +32,7 @@ struct HomeView: View {
             
         }
         .background(Color.theme.background
-            .ignoresSafeArea()
+//            .ignoresSafeArea()
         )
     }
     

@@ -15,8 +15,8 @@ struct CustomArticleCard: View {
     var body: some View {
         VStack(alignment: .leading) {
             
-            ArticleAuthor(author: article.author.name, category: article.category)
-            
+          ArticleAuthor(author: article.author.name, image: article.author.image, category: article.category)
+
             HStack {
                 
                 VStack(alignment: .leading) {
@@ -42,12 +42,14 @@ struct CustomArticleCard: View {
     }
     
     private struct ArticleAuthor: View {
-        let author: String
-        let category: String?
-        
+
+      let author: String
+      let image: String
+      let category: String?
+
         var body: some View {
             HStack {
-                Image("author") // Static author image, replace with dynamic if needed
+              Image(image) // Static author image, replace with dynamic if needed
                     .resizable()
                     .aspectRatio(1, contentMode: .fit)
                     .frame(height: 25)
