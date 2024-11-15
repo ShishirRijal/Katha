@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB2115EE2CE71723008C237C /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2115ED2CE71723008C237C /* SplashScreen.swift */; };
 		DB32CCEE2CB558F900AB5887 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CCED2CB558F900AB5887 /* ArticleDetailView.swift */; };
 		DB32CCF02CB5725800AB5887 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CCEF2CB5725800AB5887 /* Author.swift */; };
 		DB32CCF22CB5861D00AB5887 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CCF12CB5861D00AB5887 /* Date.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB2115ED2CE71723008C237C /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		DB32CCED2CB558F900AB5887 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		DB32CCEF2CB5725800AB5887 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		DB32CCF12CB5861D00AB5887 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				DBFABEF72CB016CE006ABECA /* LibraryView.swift */,
 				DBFABEF92CB0179E006ABECA /* ProfileView.swift */,
 				DB32CCED2CB558F900AB5887 /* ArticleDetailView.swift */,
+				DB2115ED2CE71723008C237C /* SplashScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2115EE2CE71723008C237C /* SplashScreen.swift in Sources */,
 				DB32CCF22CB5861D00AB5887 /* Date.swift in Sources */,
 				DBFABEE82CAFE13E006ABECA /* CustomLoginCard.swift in Sources */,
 				DBFABEEC2CAFE39F006ABECA /* CustomTextField.swift in Sources */,
