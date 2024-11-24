@@ -28,4 +28,12 @@ class AuthService {
     func isUserLoggedIn() -> Bool {
         return Auth.auth().currentUser != nil
     }
+
+    // Get currently logged in user
+  func getCurrentUser()  throws -> FirebaseUser? {
+    guard let user = Auth.auth().currentUser else {
+        return nil // No user is logged in
+    }
+    return FirebaseUser(user: user)
+  }
 }

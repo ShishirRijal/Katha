@@ -13,6 +13,8 @@ struct SplashScreenView: View {
     private let fullText = "Katha"
     private let typingSpeed = 0.1
 
+  @EnvironmentObject private var authViewModel: AuthViewModel
+
     var body: some View {
       NavigationStack {
         VStack(spacing: 20) {
@@ -25,15 +27,26 @@ struct SplashScreenView: View {
               .font(.largeTitle)
               .fontWeight(.medium)
               .foregroundColor(.black)
-                  .onAppear(perform: startTypingAnimation)
+              .onAppear(perform:  {
+                startTypingAnimation()
+
+                Task {
+                    authViewModel.checkAuthentication() // Ensure authentication check happens
+
+                }
+                print("User authenticated: \(authViewModel.isAuthenticated)")
+              })
           }
           .frame(maxWidth: .infinity, maxHeight: .infinity)
           .background(Color.white)
           .ignoresSafeArea()
-                .navigationDestination(isPresented: $navigateToHome) {
-                    MainTabView()
-                      .navigationBarBackButtonHidden(true)
-              }
+          .navigationDestination(isPresented: $navigateToHome) {
+            if authViewModel.isAuthenticated {
+              MainTabView()
+            } else {
+              AuthView()
+          }
+        }
       }
 
     }
@@ -46,12 +59,12 @@ struct SplashScreenView: View {
                 showText.append(letter)
             }
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                  navigateToHome = true
-        }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        navigateToHome = true
+      }
     }
 }
 
 #Preview {
-  SplashScreenView()
+  SplashScreenView().environmentObject(AuthViewModel())
 }

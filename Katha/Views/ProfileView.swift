@@ -70,7 +70,17 @@ struct ProfileView: View {
                     }
                     
                 }
-                
+
+              Button(action: {
+                let authVM = AuthViewModel()
+                authVM.logout()
+              }, label: {
+                Text("Log Out")
+              })
+              .padding()
+              .foregroundColor(.white)
+              .background(Color.red.cornerRadius(10))
+
             }
             .padding()
         }

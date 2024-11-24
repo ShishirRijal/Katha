@@ -26,9 +26,11 @@ struct YourApp: App {
 
 
   var body: some Scene {
+    var authViewModel = AuthViewModel()
     WindowGroup {
       NavigationView {
         SplashScreenView()
+          .environmentObject(authViewModel)
       }
     }
   }

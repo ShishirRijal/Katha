@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 
 class AuthViewModel: ObservableObject {
@@ -68,6 +69,31 @@ class AuthViewModel: ObservableObject {
           isError = true
         }
     }
+
+  func fetchCurrentUser() -> FirebaseUser? {
+    do {
+        let user = try authService.getCurrentUser()
+        return user
+    } catch {
+      errorMessage = "Failed to fetch current user: \(error.localizedDescription)"
+      debugPrint("Error fetching current user: \(String(describing: errorMessage))")
+      return nil
+    }
+  }
+
+    func checkAuthentication()  {
+          do {
+              isLoading = true
+              let user = try authService.getCurrentUser()
+              isAuthenticated = (user != nil)
+          } catch {
+              errorMessage = "Failed to fetch current user: \(error.localizedDescription)"
+              isError = true
+              isAuthenticated = false
+          }
+          isLoading = false
+      }
+
 
     private func resetFields() {
         email = ""

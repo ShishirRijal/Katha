@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 class FirebaseUser {
   let uid: String
   let email: String
 
-  init(uid: String, email: String) {
-    self.uid = uid
-    self.email = email
+  init(user: FirebaseAuth.User) {
+    self.uid = user.uid
+    self.email = user.email!
   }
 }
