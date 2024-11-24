@@ -22,6 +22,7 @@
 		DB615D432CAF333000CD1813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB615D422CAF333000CD1813 /* Assets.xcassets */; };
 		DB615D462CAF333000CD1813 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB615D452CAF333000CD1813 /* Preview Assets.xcassets */; };
 		DB7EDDB02CB04D5600556006 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7EDDAF2CB04D5600556006 /* Article.swift */; };
+		DB8BF9E92CF2EE2800622F5F /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8BF9E82CF2EE2800622F5F /* CustomSecureField.swift */; };
 		DBFABEC92CAF373C006ABECA /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEC82CAF373C006ABECA /* AuthView.swift */; };
 		DBFABED02CAF435E006ABECA /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBFABECD2CAF435E006ABECA /* PlayfairDisplay-Bold.ttf */; };
 		DBFABED12CAF435E006ABECA /* PlayfairDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBFABECE2CAF435E006ABECA /* PlayfairDisplay-Medium.ttf */; };
@@ -59,6 +60,7 @@
 		DB615D422CAF333000CD1813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB615D452CAF333000CD1813 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DB7EDDAF2CB04D5600556006 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		DB8BF9E82CF2EE2800622F5F /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		DBFABEC82CAF373C006ABECA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		DBFABECC2CAF4263006ABECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBFABECD2CAF435E006ABECA /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				DBFABEE92CAFE2FC006ABECA /* CustomButton.swift */,
 				DBFABEEB2CAFE39F006ABECA /* CustomTextField.swift */,
 				DBFABEFB2CB02D72006ABECA /* CustomArticleCard.swift */,
+				DB8BF9E82CF2EE2800622F5F /* CustomSecureField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				DBFABEE52CAFC633006ABECA /* RegistrationViewModel.swift in Sources */,
 				DB32CCF02CB5725800AB5887 /* Author.swift in Sources */,
 				DBFABEF22CB012CF006ABECA /* MainTabView.swift in Sources */,
+				DB8BF9E92CF2EE2800622F5F /* CustomSecureField.swift in Sources */,
 				DB615D412CAF332F00CD1813 /* ContentView.swift in Sources */,
 				DB615D3F2CAF332F00CD1813 /* KathaApp.swift in Sources */,
 			);

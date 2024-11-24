@@ -9,38 +9,51 @@ import SwiftUI
 
 struct RegistrationView: View {
     @StateObject private var registrationViewModel = RegistrationViewModel()
+    @State private var isRegistrationSuccessful: Bool = false
 
     var body: some View {
-        
-        NavigationView {
+        NavigationStack {
             VStack {
-                
                 // Back Button
                 BackButton()
-                
+
                 // Title View
                 TitleView()
-                
-                // Form
-                RegistrationFormView(registrationViewModel: registrationViewModel)
-                
-                // Create Account Button
-                CustomButton(title: "Create account") {
-                    registrationViewModel.register()
-                }
-                
-                Spacer()
-                
-                FooterView()
 
+                // Registration Form
+                RegistrationFormView(registrationViewModel: registrationViewModel)
+
+                // Create Account Button
+                CustomButton(title: "Create account", isLoading: registrationViewModel.isLoading) {
+                    Task {
+                        await registrationViewModel.register()
+                        if registrationViewModel.errorMessage == nil {
+                            isRegistrationSuccessful = true
+                        }
+                    }
+                }
+
+                Spacer()
+
+                // Footer View
+                FooterView()
             }
             .padding()
-            
+            .alert(isPresented: $registrationViewModel.isError) {
+                Alert(
+                    title: Text("Registration Failed"),
+                    message: Text(registrationViewModel.getErrorMessage),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
+            .navigationDestination(isPresented: $isRegistrationSuccessful) {
+                MainTabView() // Navigate to the MainTabView after registration
+            }
         }
         .navigationBarBackButtonHidden(true)
-        
     }
-    
+}
+
     
     //MARK: Title View
     private struct TitleView: View {
@@ -75,15 +88,19 @@ struct RegistrationView: View {
         @ObservedObject var registrationViewModel: RegistrationViewModel
 
         var body: some View {
-            VStack(alignment: .leading) {
-                Text("Your full name")
-                CustomTextField(placeholder: "Shishir Rijal", text: $registrationViewModel.fullName)
-                
-                Spacer().frame(height: 25) // Space between input fields
-                
-                Text("Your email")
-                CustomTextField(placeholder: "rijal.shishir@test.com", text: $registrationViewModel.email)
-            }
+          VStack(alignment: .leading) {
+            Text("Your full name")
+            CustomTextField(placeholder: "Shishir Rijal", text: $registrationViewModel.fullName)
+
+            Spacer().frame(height: 25) // Space between input fields
+
+            Text("Your email")
+            CustomTextField(placeholder: "rijal.shishir@test.com", text: $registrationViewModel.email)
+            
+            Text("Your Password")
+            CustomSecureField(placeholder: "Create a strong password", text: $registrationViewModel.password)
+
+          }
             .font(.bodyFont()) // Set font for the input labels
             .padding(.vertical, 30) // Vertical padding around the form
         }
@@ -103,7 +120,7 @@ struct RegistrationView: View {
         }
     }
     
-}
+
 
 #Preview {
     RegistrationView()
