@@ -38,6 +38,7 @@ struct MainTabView: View {
                     }
                     .tag(Tabs.profile)
         }
+        
         .accentColor(.theme.primary)
         
     }
