@@ -97,6 +97,8 @@ struct RegistrationView: View {
             Text("Your email")
             CustomTextField(placeholder: "rijal.shishir@test.com", text: $registrationViewModel.email)
             
+            Spacer().frame(height: 25) // Space between input fields
+
             Text("Your Password")
             CustomSecureField(placeholder: "Create a strong password", text: $registrationViewModel.password)
 

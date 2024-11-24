@@ -21,7 +21,7 @@ struct CustomTextField: View {
             .background(backgroundColor)
             .cornerRadius(5)
             .font(.bodyFont(size: fontSize))
-            .autocapitalization(.words)
+//            .autocapitalization(.words)
     }
 }
 

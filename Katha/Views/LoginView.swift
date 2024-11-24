@@ -4,74 +4,102 @@
 //
 //  Created by Shishir Rijal on 04/10/2024.
 //
-
 import SwiftUI
 
 struct LoginView: View {
-    
+
     @StateObject private var loginViewModel = LoginViewModel()
-    
+    @State private var isLoginSuccessful: Bool = false
+
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
-                
                 BackButton()
-                
                 TitleView()
-                
-                Spacer()
-                    .frame(height: 30)
-                
-                VStack(alignment: .leading) {
-                    Text("Your email")
-                        
-                    CustomTextField(placeholder: "rijal.shishir@test.com", text: $loginViewModel.email)
+
+                Spacer().frame(height: 30)
+
+                LoginForm(loginViewModel: loginViewModel)
+
+                Spacer().frame(height: 30)
+
+                CustomButton(
+                    title: "Login",
+                    isLoading: loginViewModel.isLoading
+                ) {
+                    Task {
+                        await loginViewModel.login()
+                        if !loginViewModel.isError {
+                            isLoginSuccessful = true
+                        }
+                    }
                 }
-                
+
                 Spacer()
-                    .frame(height: 30)
-                
-                CustomButton(title: "Continue") {
-                    loginViewModel.login()
-                }
-                
-                Spacer()
-                
             }
             .padding()
+            .alert(isPresented: $loginViewModel.isError) {
+                Alert(
+                    title: Text("Login Failed"),
+                    message: Text(loginViewModel.getErrorMessage),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
+            .navigationDestination(isPresented: $isLoginSuccessful) {
+                MainTabView()
+            }
         }
         .navigationBarBackButtonHidden(true)
     }
-    
-    
-    // MARK: BackButton
-    private struct BackButton: View {
-        var body: some View {
-            HStack {
-                NavigationLink(destination: AuthView()) {
-                    Image(systemName: "chevron.left") // Back icon
-                        .font(.title) // Adjust the size of the icon
-                        .foregroundColor(.black) // Set the icon color to black
-                }
-                Spacer() // Spacer to push the button to the left
-            }
-        }
-    }
-    
-    //MARK: Title View
-    private struct TitleView: View {
-        var body: some View {
-            VStack {
-                Text("Medium")
-                    .font(.logoFont())
-                Spacer().frame(height: 20) // Space between the title and the next text
-                Text("Sign in with email.")
-                    .font(.custom(.playfairDisplayMedium, size: 30))
-            }
-        }
-    }
-    
 }
+
+private struct BackButton: View {
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        HStack {
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "chevron.left")
+                    .font(.title)
+                    .foregroundColor(.black)
+            }
+            Spacer()
+        }
+    }
+}
+
+private struct TitleView: View {
+    var body: some View {
+        VStack {
+            Text("Welcome Back")
+                .font(.custom(.poppinsMedium, size: 30))
+            Spacer().frame(height: 20)
+            Text("Log in with your email.")
+                .font(.custom(.poppinsRegular, size: 20))
+        }
+    }
+}
+
+private struct LoginForm: View {
+    @ObservedObject var loginViewModel: LoginViewModel
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Email")
+            CustomTextField(placeholder: "your.email@example.com", text: $loginViewModel.email)
+
+            Spacer().frame(height: 25)
+
+            Text("Password")
+            CustomSecureField(placeholder: "Enter your password", text: $loginViewModel.password)
+        }
+        .font(.bodyFont())
+        .padding(.vertical, 10)
+    }
+}
+
 
 #Preview {
     LoginView()
