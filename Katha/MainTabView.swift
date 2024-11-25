@@ -38,6 +38,8 @@ struct MainTabView: View {
                     }
                     .tag(Tabs.profile)
         }
+        .navigationBarBackButtonHidden(true)
+
         .accentColor(.theme.primary)
         
     }
