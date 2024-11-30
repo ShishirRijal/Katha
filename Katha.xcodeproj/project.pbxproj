@@ -25,6 +25,8 @@
 		DB6186CE2CFB4520009DD895 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186CD2CFB4520009DD895 /* DatabaseService.swift */; };
 		DB6186D02CFB4A19009DD895 /* WriteArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186CF2CFB4A19009DD895 /* WriteArticleViewModel.swift */; };
 		DB6186D22CFB813B009DD895 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186D12CFB813B009DD895 /* HomeViewModel.swift */; };
+		DB6186D42CFB97BF009DD895 /* ArticleTagGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186D32CFB97BF009DD895 /* ArticleTagGenerator.swift */; };
+		DB6186D62CFB98FE009DD895 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186D52CFB98FE009DD895 /* String.swift */; };
 		DB77EF8B2CF3BC0B0071F6BC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF8A2CF3BC0B0071F6BC /* AuthService.swift */; };
 		DB77EF8E2CF3C0DB0071F6BC /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF8D2CF3C0DB0071F6BC /* AuthError.swift */; };
 		DB77EF922CF3C5340071F6BC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF912CF3C5340071F6BC /* HeaderView.swift */; };
@@ -75,6 +77,8 @@
 		DB6186CD2CFB4520009DD895 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		DB6186CF2CFB4A19009DD895 /* WriteArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteArticleViewModel.swift; sourceTree = "<group>"; };
 		DB6186D12CFB813B009DD895 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DB6186D32CFB97BF009DD895 /* ArticleTagGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTagGenerator.swift; sourceTree = "<group>"; };
+		DB6186D52CFB98FE009DD895 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		DB77EF8A2CF3BC0B0071F6BC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DB77EF8D2CF3C0DB0071F6BC /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		DB77EF912CF3C5340071F6BC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				DB77EF8D2CF3C0DB0071F6BC /* AuthError.swift */,
+				DB6186D32CFB97BF009DD895 /* ArticleTagGenerator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				DBFABEDA2CAF4476006ABECA /* Color.swift */,
 				DBFABEDC2CAF454C006ABECA /* Font.swift */,
 				DB32CCF12CB5861D00AB5887 /* Date.swift */,
+				DB6186D52CFB98FE009DD895 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -393,11 +399,13 @@
 				DBFABEF82CB016CE006ABECA /* LibraryView.swift in Sources */,
 				DBFABEFA2CB0179E006ABECA /* ProfileView.swift in Sources */,
 				DBFABEE32CAFC48A006ABECA /* RegistrationView.swift in Sources */,
+				DB6186D42CFB97BF009DD895 /* ArticleTagGenerator.swift in Sources */,
 				DBFABEF02CAFE964006ABECA /* LoginViewModel.swift in Sources */,
 				DBFABEDD2CAF454C006ABECA /* Font.swift in Sources */,
 				DB77EF8E2CF3C0DB0071F6BC /* AuthError.swift in Sources */,
 				DB77EF8B2CF3BC0B0071F6BC /* AuthService.swift in Sources */,
 				DBFABEE52CAFC633006ABECA /* RegistrationViewModel.swift in Sources */,
+				DB6186D62CFB98FE009DD895 /* String.swift in Sources */,
 				DB6186D02CFB4A19009DD895 /* WriteArticleViewModel.swift in Sources */,
 				DB77EF9A2CF3C62C0071F6BC /* BackButton.swift in Sources */,
 				DB32CCF02CB5725800AB5887 /* Author.swift in Sources */,

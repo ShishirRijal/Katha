@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ArticleDetailView: View {
-    let article: Article
-        
+    let article: ArticleModel
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -22,25 +22,15 @@ struct ArticleDetailView: View {
                     
                     // Article Author
                     ArticleAuthorHeader(article: article)
-                    
-                    // Thumbnail
-                    Image(article.thumbnail)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: .infinity)
-                        .padding(.vertical)
-                    
-                    
-                    
-                    
+
                     // Article Detail
-                    Text(article.introduction)
+                    Text(article.content)
+
                     
-                    
-                    // Tags
+                    // Tags [Random For Now]
                     ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 20) {
-                                    ForEach(article.tags, id: \.self) {tag in
+                                    ForEach(ArticleTagGenerator.generateTags(count: 5), id: \.self) {tag in
                                             CustomTagChip(tag)
                                     }
                                 
@@ -50,8 +40,8 @@ struct ArticleDetailView: View {
                     
 
                     // Author Detail
-                    AuthorDetail(author: article.author)
-                    
+                    AuthorDetail(author: article.author!)
+
                     
                     VStack (alignment: .center) {
                         Text("• • •")
@@ -62,7 +52,7 @@ struct ArticleDetailView: View {
                     
                     
                                             
-                    Text("More from Shishir Rijal")
+                    Text("More from \(article.author!.fullName)")
                         .font(.custom(.poppinsMedium, size: 24))
                         .foregroundColor(Color.theme.primary)
                     
@@ -114,19 +104,23 @@ struct CustomTagChip: View {
 }
 
 struct AuthorDetail: View {
-    let author: Author
-    
+    let author: UserModel
+
     var body: some View {
         VStack (alignment: .leading) {
             HStack {
-                Image(author.image)
-                    .resizable()
-                    .aspectRatio(1, contentMode: .fill)
-                    .frame(width: 90)
-                    .clipShape(Circle())
+                AsyncImage(url: URL(string: author.photoURL), content: { Image in
+                    Image
+                        .resizable()
+                        .aspectRatio(1, contentMode: .fit)
+                        .frame(height:45)
+                        .clipShape(Circle())
+                }, placeholder: {
+                    Image(systemName: "person.fill")
+                })
+
                 Spacer()
                 HStack {
-                    
                     Text("Follow")
                         .font(.bodyFont(size: 20))
                         .foregroundColor(Color.theme.background)
@@ -144,7 +138,7 @@ struct AuthorDetail: View {
                 }
                 
             }
-            Text("Written by \(author.name)")
+            Text("Written by \(author.fullName)")
                 .font(.custom(.poppinsMedium, size: 20))
             Text("\(author.followers) Followers")
             Spacer().frame(height: 20)
@@ -156,21 +150,28 @@ struct AuthorDetail: View {
 }
 
 struct ArticleAuthorHeader: View {
-    let article: Article
+    let article: ArticleModel
+
+    
+
     var body: some View {
         
         HStack {
-            Image(article.author.image)
-                .resizable()
-                .aspectRatio(1, contentMode: .fill)
-                .clipShape(Circle())
-                .frame(width: 60)
-            
+            AsyncImage(url: URL(string: article.author!.photoURL), content: { Image in
+                Image
+                    .resizable()
+                    .aspectRatio(1, contentMode: .fit)
+                    .frame(height:45)
+                    .clipShape(Circle())
+            }, placeholder: {
+                Image(systemName: "person.fill")
+            })
+
             VStack (alignment: .leading) {
-                Text(article.author.name)
+                Text(article.author!.fullName)
                     .font(.bodyFont())
                     .fontWeight(.medium)
-                Text("\(article.timeToRead()) min read • \(article.date.timeAgoDisplay())")
+                Text("\(article.content.estimatedReadingTime()) min read • \(article.timestamp.dateValue().timeAgoDisplay())")
                     .font(.bodyFont())
                 
             }
@@ -180,5 +181,5 @@ struct ArticleAuthorHeader: View {
 
 
 #Preview {
-    ArticleDetailView(article: dummyArticles[1])
+    ArticleDetailView(article: dummyArticle)
 }
