@@ -52,6 +52,16 @@ class DatabaseService {
         return try await processArticles(from: snapshot.documents)
     }
 
+    /// Fetch trending Articles
+    /// [Considering the latest ones as the trending]
+    func fetchTrendingArticles(limit: Int = 10) async throws -> [ArticleModel] {
+        let snapshot = try await db.collection("articles")
+            .order(by: "timestamp", descending: true)
+            .limit(to: limit)
+            .getDocuments()
+        return try await processArticles(from: snapshot.documents)
+    }
+
     /// Fetch User by a specific user ID
     func fetchUserProfile(id: String) async throws -> UserModel {
         let doc = try await db.collection("users").document(id).getDocument()

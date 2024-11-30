@@ -49,9 +49,6 @@ struct CustomArticleCard: View {
                 }, placeholder: {
                     Image(systemName: "person.fill")
                 })
-
-
-                
                 Text(author)
                     .foregroundColor(.theme.primary)
                 .lineLimit(1)
