@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ProfileView: View {
-    let user: User
-    @EnvironmentObject var authVM: AuthViewModel
 
+struct ProfileView: View {
+    @EnvironmentObject var authVM: AuthViewModel
+    @StateObject var viewModel = ProfileViewModel()
     var body: some View {
         NavigationStack {
             VStack {
@@ -20,7 +20,7 @@ struct ProfileView: View {
                         // logout
                         authVM.logout()
                     }, label: {
-                        Image(systemName: "gearshape") // rectangle.portrait.and.arrow.right
+                        Image(systemName: "rectangle.portrait.and.arrow.forward") // rectangle.portrait.and.arrow.right
                             .foregroundColor(.primary)
                             .font(.title2)
                     })
@@ -31,38 +31,48 @@ struct ProfileView: View {
                 ScrollView {
                     VStack(spacing: 20) {
                         // Profile Header
-                        HStack {
-                            Image(user.profileImageURL)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 80, height: 80)
-                                .clipShape(Circle())
+                        if let user = viewModel.user {
+                            HStack {
+                                AsyncImage(url: URL(string: user.photoURL), content: { Image in
+                                    Image
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 80, height: 80)
+                                        .clipShape(Circle())
+                                }, placeholder: {
+                                    Image(systemName: "person.fill")
+                                })
 
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text(user.name)
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                Text(user.username)
-                                    .font(.subheadline)
-                                Text(user.bio)
-                                    .font(.body)
-                                    .lineLimit(3)
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Text(user.fullName)
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                    Text(user.email)
+                                        .font(.subheadline)
+                                    Text(user.bio)
+                                        .font(.body)
+                                        .lineLimit(3)
+                                }
+                                Spacer()
                             }
-                            Spacer()
+
+                            // Statistics
+                            HStack(spacing: 40) {
+                                StatsView(label: "Articles", value: (Int.random(in: 2...45)))
+
+                                VerticalDivider()
+
+                                StatsView(label: "Followers", value: user.followers)
+
+                                VerticalDivider()
+
+                                StatsView(label: "Following", value: Int.random(in: 500...2300))
+                            }
+
                         }
+
                         
-                        // Statistics
-                        HStack(spacing: 40) {
-                            StatsView(label: "Articles", value: user.articleCount)
-                           
-                            VerticalDivider()
-                            
-                            StatsView(label: "Followers", value: user.followerCount)
-                            
-                            VerticalDivider()
-                            
-                            StatsView(label: "Following", value: user.followingCount)
-                        }
+
                         
                         Divider()
                             .frame(height: 2)
@@ -78,20 +88,34 @@ struct ProfileView: View {
                             
                             Spacer()
                         }
-                        
-                        // Recent Articles
-//                        VStack(spacing: 16) {
-//                            ForEach(user.recentArticles) { article in
-//                                CustomArticleCard(article: article, isBookmark: false)
-//                                Divider().padding(10)
-//                            }
-//                            
-//                        }
 
+                       //  Recent Articles
+                        
+                        if viewModel.isLoading {
+                            ProgressView("Loading recent articles...")
+                        } else if viewModel.recentArticles.isEmpty {
+                            Text("You don't have any articles yet.\nStart writing what's on your mind!")
+                                .foregroundColor(.gray)
+                                .font(.bodyFont())
+                        } else {
+                            ForEach(viewModel.recentArticles) {article in
+                                NavigationLink(destination: ArticleDetailView(article: article)) {
+                                    CustomArticleCard(article: article, isBookmark: false)
+                                    Divider().padding(10)
+
+                                }
+                                .foregroundColor(.theme.primary)
+                            }
+                        }
                     }
                     .padding()
 
                 }
+            }
+        }
+        .onAppear {
+            Task {
+                await viewModel.fetchUserProfile()
             }
         }
         .safeAreaInset(edge: .bottom, alignment: .trailing) {
@@ -110,7 +134,7 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(user: dummyUser)
+    ProfileView()
 }
 
 
