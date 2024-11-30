@@ -46,4 +46,12 @@ class DatabaseService {
         return articles
     }
 
+    func fetchUserProfile(id: String) async throws -> UserModel {
+        let doc = try await db.collection("users").document(id).getDocument()
+        guard let data = doc.data() else {
+            throw AuthError.userNotFound
+        }
+        return try Firestore.Decoder().decode(UserModel.self, from: data)
+    }
+
 }
