@@ -9,26 +9,22 @@ import SwiftUI
 
 struct LibraryView: View {
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                Header()
-                    .padding(.bottom, 20)
-                
-                ForEach(0..<8) { index in
-                        CustomArticleCard(article: dummyArticle, isBookmark: true)
-                        Divider()
-                        .padding(.vertical, 10)
+        VStack {
+            Header()
+                .padding(.bottom, 10)
+            ScrollView {
+                VStack(alignment: .leading) {
+                    ForEach(0..<8) { index in
+                            CustomArticleCard(article: dummyArticle, isBookmark: true)
+                            Divider()
+                            .padding(.vertical, 10)
+                    }
                 }
-                
-                
-                
             }
-            .padding(.horizontal)
         }
+        .padding(.horizontal)
         .background(Color.theme.background
-            .ignoresSafeArea()
-            
-        )
+            .ignoresSafeArea())
     }
     
     private struct Header: View {

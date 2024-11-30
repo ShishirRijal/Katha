@@ -19,7 +19,7 @@ struct RegistrationView: View {
                 BackButton()
                 ScrollView {
                     VStack {
-                        TitleView(title: "Medium", subtitle: "Sign up with email.")
+                        TitleView(title: "KATHA", subtitle: "Sign up with email.")
 
                         RegistrationForm()
 

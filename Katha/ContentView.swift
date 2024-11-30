@@ -13,7 +13,7 @@ struct ContentView: View {
             Image(systemName: "apple.logo")
                 .imageScale(.large)
                 .foregroundStyle(Color.theme.primary)
-            Text("Medium").font(Font.custom("Poppins-Regular", size: 32))
+            Text("KATHA").font(Font.custom("Poppins-Regular", size: 32))
         }
         .padding()
     }

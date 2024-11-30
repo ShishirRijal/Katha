@@ -24,7 +24,8 @@ struct SplashScreenView: View {
                   .frame(width: 200, height: 200)
 
               Text(showText)
-              .font(.largeTitle)
+                .font(.logoFont(size: 20))
+
               .fontWeight(.medium)
               .foregroundColor(.black)
               .onAppear(perform:  {

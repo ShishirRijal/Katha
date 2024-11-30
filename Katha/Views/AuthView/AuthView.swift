@@ -43,7 +43,7 @@ private struct HeaderView: View {
     var body: some View {
         VStack {
             Spacer().frame(height: 10)
-            Text("Medium")
+            Text("KATHA")
                 .font(.logoFont())
             Spacer().frame(height: 30)
             Text("Human\nstories and\nideas.")
