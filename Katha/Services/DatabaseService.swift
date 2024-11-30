@@ -36,4 +36,14 @@ class DatabaseService {
 
         try await docRef.setData(articleData)
     }
+
+    func fetchAllArticles() async throws -> [ArticleModel] {
+        let snapshot = try await db.collection("articles")
+            .getDocuments()
+        let articles = snapshot.documents.compactMap { doc in
+            try? doc.data(as: ArticleModel.self)
+        }
+        return articles
+    }
+
 }

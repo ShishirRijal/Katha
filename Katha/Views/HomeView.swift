@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+    @StateObject var viewModel = HomeViewModel()
+
     var body: some View {
         ScrollView {
             VStack {
@@ -30,11 +31,22 @@ struct HomeView: View {
             }
           
             .padding(.horizontal)
-            
         }
-        .background(Color.theme.background
-//            .ignoresSafeArea()
-        )
+        .onAppear {
+            Task {
+                await viewModel.loadArticles()
+            }
+        }
+        .overlay(content: {
+            if viewModel.isLoading {
+                ProgressView("Loading articles...")
+            }
+        })
+        .alert(isPresented: .constant(viewModel.isError), content: {
+            Alert(title: Text("Error"), message: Text(viewModel.errorMessage ?? "Unknown error"), dismissButton: .default(Text("OK")))
+
+        })
+        .background(Color.theme.background)
     }
     
     

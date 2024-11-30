@@ -6,6 +6,17 @@
 //
 
 import Foundation
+import Firebase
+
+
+struct ArticleModel: Identifiable, Codable {
+    var id: String
+    var title: String
+    var content: String
+    var userId: String
+    var timestamp: Timestamp
+    var user: FirebaseUser?
+}
 
 
 struct Article: Identifiable {
