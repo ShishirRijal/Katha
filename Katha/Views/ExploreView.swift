@@ -9,19 +9,36 @@ import SwiftUI
 
 struct ExploreView: View {
     @StateObject private var viewModel = ExploreViewModel()
-    @State private var searchText = ""
-    
+    @FocusState private var isSearchBarFocused: Bool
+
     
     var body: some View {
         NavigationStack {
             VStack {
-                Header()
+                Header("Explore")
                 ScrollView {
                     VStack (alignment: .center) {
 
 
-                        SearchBarView(searchText: $searchText)
-                    
+                        SearchBarView(searchText: $viewModel.searchText)
+                            .focused($isSearchBarFocused)
+                            .onChange(of: viewModel.searchText, perform: { _ in
+                                viewModel.searchArticles()
+                            })
+
+                        if(!viewModel.searchText.isEmpty) {
+                            Header("Search Results")
+                                .padding(.bottom, 10)
+                            if viewModel.filteredArticles.isEmpty {
+                                ContentUnavailableView("No Article Found", image: "", description: Text("No articles matches the given search text"))
+                            }
+                            ForEach(viewModel.filteredArticles) {article in
+                                SearchResultItem( article: article)
+                                    .padding(.bottom, 10)
+                                Divider()
+                            }
+                        }
+
                         PopularSearch()
                             .padding(.vertical, 20)
                         
@@ -50,8 +67,12 @@ struct ExploreView: View {
                                 .font(.bodyFont())
                         } else {
                             ForEach(Array(viewModel.trendingArticles.enumerated()), id: \.element.id) { index, article in
-                                TrendingItem(index: index + 1, article: article)
-                                    .padding(.bottom, 10)
+                                NavigationLink(destination: ArticleDetailView(article: article)) {
+                                    TrendingItem(index: index + 1, article: article)
+                                        .padding(.bottom, 10)
+
+                                }
+                                .foregroundColor(.theme.primary)
                             }
                         }
 
@@ -64,19 +85,35 @@ struct ExploreView: View {
                 }
 
             }
+            .onTapGesture {
+               // Dismiss keyboard when tapping outside
+               isSearchBarFocused = false
+            }
             .padding(.horizontal)
             .onAppear {
                 Task {
+                    await viewModel.loadAllArticles()
                     await viewModel.loadTrendingArticles()
                 }
+            }
+            .alert(isPresented: .constant(viewModel.isError)) {
+                Alert(
+                    title: Text("Error"),
+                    message: Text(viewModel.errorMessage ?? "Unknown error occurred."),
+                    dismissButton: .default(Text("OK"))
+                )
             }
         }
     }
     
     struct Header: View {
+        let title: String
+        init(_ title: String) {
+            self.title = title
+        }
         var body: some View {
             HStack() {
-                Text("Explore")
+                Text(title)
                     .font(.custom(.poppinsMedium, size: 30))
                     .fontWeight(.bold)
                 
@@ -172,7 +209,8 @@ struct TrendingItem: View {
                             .font(.custom("Poppins-Bold", size: 18))
                             .lineLimit(2)
                             .foregroundColor(.primary)
-                        
+                            .multilineTextAlignment(.leading)
+
                         HStack {
                             Text("7 min read") // You can make this dynamic if available
                             Text("•")
@@ -181,6 +219,42 @@ struct TrendingItem: View {
                         .foregroundColor(.primary)
                     }
                 }
+            }
+        }
+    }
+}
+
+
+
+struct SearchResultItem: View {
+    var article: ArticleModel
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(article.title)
+                .font(.custom("Poppins-Bold", size: 18))
+                .lineLimit(2)
+                .foregroundColor(.primary)
+                .multilineTextAlignment(.leading)
+
+            .foregroundColor(.primary)
+
+            HStack {
+                AsyncImage(url: URL(string: article.author?.photoURL ?? ""), content: { Image in
+                    Image
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .clipShape(Circle())
+                        .padding(.trailing, 5)
+                }, placeholder: {
+                    Image(systemName: "person.fill")
+                })
+
+
+                Text(article.author?.fullName ?? "Unknown")
+                    .font(.custom("Poppins-Medium", size: 18))
+
+                Spacer()
             }
         }
     }
