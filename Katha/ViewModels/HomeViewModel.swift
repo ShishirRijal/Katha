@@ -20,11 +20,18 @@ class HomeViewModel: ObservableObject {
     func loadArticles() async {
         isLoading = true
         do {
-            let fetchedArticles = try await DatabaseService.shared.fetchAllArticles()
+            // Fetch all articles
+            var fetchedArticles = try await DatabaseService.shared.fetchAllArticles()
+            // Fetch user details for each article
+            for index in fetchedArticles.indices {
+                let userId = fetchedArticles[index].userId
+                let user = try await DatabaseService.shared.fetchUserProfile(id: userId)
+                fetchedArticles[index].author = user
+            }
             self.articles = fetchedArticles
-            print(self.articles.description)
             self.isLoading = false
         } catch {
+            print("Error loading articles")
             self.errorMessage = error.localizedDescription
             self.isLoading = false
         }

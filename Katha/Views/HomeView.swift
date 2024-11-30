@@ -11,26 +11,44 @@ struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
 
     var body: some View {
-        ScrollView {
+        ZStack {
             VStack {
                 // header
                 Header()
                 // Articles
                 ScrollView {
-                    ForEach(0..<dummyArticles.count) { index in
+                    ForEach(viewModel.articles) { article in
                         // Article Card
                         VStack {
-                            CustomArticleCard(article: dummyArticles[index], isBookmark: false)
-                            
+                            CustomArticleCard(article: article, isBookmark: false)
+
                             Divider()
                                 .overlay(Color.theme.gray)
                                 .padding(.vertical, 10)
                         }
                     }
                 }
+
             }
           
             .padding(.horizontal)
+
+        // In case of error
+            if(viewModel.isError) {
+                ContentUnavailableView(label: {
+                    Label("An error occurred while fetching articles!", systemImage: "exclamationmark.icloud.fill")
+                }, actions: {
+                    Button(action: {
+                        Task {
+                            await viewModel.loadArticles()
+                        }
+                    }) {
+                        Text("Refresh")
+
+                    }
+                })
+                .padding(.bottom, 200)
+            }
         }
         .onAppear {
             Task {
@@ -41,10 +59,6 @@ struct HomeView: View {
             if viewModel.isLoading {
                 ProgressView("Loading articles...")
             }
-        })
-        .alert(isPresented: .constant(viewModel.isError), content: {
-            Alert(title: Text("Error"), message: Text(viewModel.errorMessage ?? "Unknown error"), dismissButton: .default(Text("OK")))
-
         })
         .background(Color.theme.background)
     }

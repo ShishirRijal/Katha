@@ -68,7 +68,7 @@ struct ArticleDetailView: View {
                     
                     // Recommended Articles
                     ForEach(0..<2) {index in
-                        CustomArticleCard(article: dummyArticles[index], isBookmark: false)
+                        CustomArticleCard(article: dummyArticle, isBookmark: false)
                             
                         Divider()
                             .padding(.vertical, 20)

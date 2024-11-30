@@ -9,33 +9,25 @@ import SwiftUI
 
 
 struct CustomArticleCard: View {
-    let article: Article
+    let article: ArticleModel
     let isBookmark: Bool
     
     var body: some View {
         VStack(alignment: .leading) {
             
-          ArticleAuthor(author: article.author.name, image: article.author.image, category: article.category)
+            ArticleAuthor(author: article.author!.fullName, image: article.author!.photoURL)
 
-            HStack {
-                
-                VStack(alignment: .leading) {
-                    
-                    // Introduction
-                    ArticleIntroduction(title: article.title, introduction: article.introduction)
-                    
-                    
-                    if(!isBookmark) {
-                        Spacer()
-                        // ArticleStats
-                        ArticleStats(date: article.date.toMonthAndDayFormat(shortMonth: true), claps: article.claps, comments: article.comments, memberOnly: article.memberOnly)
-                    }
+            VStack(alignment: .leading) {
+                // Introduction
+                ArticleIntroduction(title: article.title, introduction: article.content)
+
+                if(!isBookmark) {
+                    Spacer()
+                    // ArticleStats
+                    ArticleStats(date: article.timestamp.dateValue().toMonthAndDayFormat(shortMonth: true))
                 }
-                
-                ArticleThumbnail(thumbnail: article.thumbnail, isBookmark: isBookmark)
-                
             }
-            
+
         }
         .frame(width: .infinity, height: isBookmark ? 140 : 200)
        
@@ -45,28 +37,23 @@ struct CustomArticleCard: View {
 
       let author: String
       let image: String
-      let category: String?
 
         var body: some View {
             HStack {
-              Image(image) // Static author image, replace with dynamic if needed
-                    .resizable()
-                    .aspectRatio(1, contentMode: .fit)
-                    .frame(height: 25)
-                    .clipShape(RoundedRectangle(cornerRadius: 30))
-                
-                HStack {
-                    Text(author)
-                        .foregroundColor(.theme.primary)
-                    
-                    if let category = category {
-                        Text("in ")
-                            .foregroundColor(.theme.gray)
-                        + Text(category)
-                            .foregroundColor(.theme.primary)
-                    }
-                }
+                AsyncImage(url: URL(string: image), content: { Image in
+                    Image
+                        .resizable()
+                        .aspectRatio(1, contentMode: .fit)
+                        .frame(height:30)
+                        .clipShape(Circle())
+                }, placeholder: {
+                    Image(systemName: "person.fill")
+                })
 
+
+                
+                Text(author)
+                    .foregroundColor(.theme.primary)
                 .lineLimit(1)
                 .opacity(0.9)
             }
@@ -74,38 +61,47 @@ struct CustomArticleCard: View {
         }
     }
     
-    private struct ArticleThumbnail: View {
-        let thumbnail: String
-        let isBookmark: Bool
-        
-        var body: some View {
-            VStack {
-                Image(thumbnail)
-                    .resizable()
-                    .frame(height: 80)
-                    .aspectRatio(1.3, contentMode: .fit)
-                    .clipShape(RoundedRectangle(cornerRadius: 5))
-                
-                Spacer()
-                if(!isBookmark) {
-                    HStack {
-                        Image(systemName: "ellipsis.circle")
-                        Spacer().frame(width: 30)
-                        Image(systemName: "ellipsis")
-                    }
-                    .foregroundColor(.theme.gray)
-                }
-                
-            }
-        }
-    }
+//    private struct ArticleThumbnail: View {
+//        let thumbnail: String
+//        let isBookmark: Bool
+//        
+//        var body: some View {
+//            VStack {
+//                Image(thumbnail)
+//                    .resizable()
+//                    .frame(height: 80)
+//                    .aspectRatio(1.3, contentMode: .fit)
+//                    .clipShape(RoundedRectangle(cornerRadius: 5))
+//                
+//                Spacer()
+//                if(!isBookmark) {
+//                    HStack {
+//                        Image(systemName: "ellipsis.circle")
+//                        Spacer().frame(width: 30)
+//                        Image(systemName: "ellipsis")
+//                    }
+//                    .foregroundColor(.theme.gray)
+//                }
+//                
+//            }
+//        }
+//    }
     
     private struct ArticleStats: View {
         let date: String
         let claps: String
         let comments: String
         let memberOnly: Bool
-        
+
+        // Initializer with random values
+        init(date: String) {
+            self.date = date
+            self.claps = "\(Int.random(in: 10...1000))"
+            self.comments = "\(Int.random(in: 0...200))"
+            self.memberOnly = Bool.random()
+        }
+
+
         var body: some View {
             HStack {
                 if(memberOnly) {
@@ -133,26 +129,30 @@ struct CustomArticleCard: View {
     private struct ArticleIntroduction: View {
         let title: String
         let introduction: String
-        
+
         var body: some View {
-            VStack {
+            VStack(alignment: .leading) {
                 // Article Title
-                Text(title)
+                Text(title.trimmingCharacters(in: .whitespacesAndNewlines))
                     .font(.custom(.poppinsBold, size: 24))
-                    .lineLimit(3)
-                    .padding(.bottom, 3)
-                
+                    .lineLimit(2, reservesSpace: true) // Ensures space for two lines
+                    .multilineTextAlignment(.leading)
+                    .minimumScaleFactor(0.8) // Scales text down to fit two lines if too long
+
                 // Article Insight
-                Text(introduction)
+                Text(introduction.trimmingCharacters(in: .whitespacesAndNewlines))
                     .font(.custom(.poppinsMedium, size: 16))
                     .lineLimit(2)
+                    .multilineTextAlignment(.leading)
                     .foregroundColor(.theme.gray)
+                    .minimumScaleFactor(1.0)
             }
         }
     }
+
 }
 
 
 #Preview {
-    CustomArticleCard(article: dummyArticles.first!, isBookmark: false)
+    CustomArticleCard(article: dummyArticle, isBookmark: false)
 }
