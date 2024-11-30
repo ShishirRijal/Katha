@@ -6,53 +6,56 @@
 //
 
 import SwiftUI
+import UIKit
+
 
 struct RegistrationView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    private var imageHeight: Double = 100.0
 
     var body: some View {
         NavigationStack {
             VStack {
-                // Back Button
                 BackButton()
+                ScrollView {
+                    VStack {
+                        TitleView(title: "Medium", subtitle: "Sign up with email.")
 
-                // Title View
-                TitleView(title: "Medium", subtitle: "Sign up with email.")
+                        RegistrationForm()
 
-                // Registration Form
-              RegistrationForm()
+                        CustomButton(title: "Create account", isLoading: authViewModel.isLoading) {
+                            print("User clicked Create Account")
+                            Task {
+                                await authViewModel.register()
+                                if authViewModel.isAuthenticated {
+                                    print("Registration completed successfully")
+                                }
+                            }
+                        }
 
-                // Create Account Button
-              CustomButton(title: "Create account", isLoading: authViewModel.isLoading) {
-                  Task {
-                      await authViewModel.register()
-                      if authViewModel.isAuthenticated {
-                      }
-                  }
-              }
-
-                Spacer()
-
-                // Footer View
-                FooterView()
-
-              Spacer()
-            }
-            .padding()
-            .alert(isPresented: $authViewModel.isError) {
-                Alert(
-                    title: Text("Registration Failed"),
-                    message: Text(authViewModel.getErrorMessage),
-                    dismissButton: .default(Text("OK"))
-                )
-            }
-            .navigationDestination(isPresented: $authViewModel.isAuthenticated) {
-                MainTabView() // Navigate to the MainTabView after registration
-            }
+                        Spacer()
+                        FooterView()
+                        Spacer()
+                    }
+                    .alert(isPresented: $authViewModel.isError) {
+                        Alert(
+                            title: Text("Registration Failed"),
+                            message: Text(authViewModel.getErrorMessage),
+                            dismissButton: .default(Text("OK"), action: {
+                                print("Alert dismissed")
+                            })
+                        )
+                    }
+                    .navigationDestination(isPresented: $authViewModel.isAuthenticated) {
+                        MainTabView()
+                    }
+                }
+            }.padding()
         }
         .navigationBarBackButtonHidden(true)
     }
 }
+
 
     // MARK: Footer View
     private struct FooterView: View {
@@ -67,15 +70,8 @@ struct RegistrationView: View {
             .multilineTextAlignment(.center) // Center align the footer text
         }
     }
-    
 
 
 #Preview {
     RegistrationView().environmentObject(AuthViewModel())
 }
-
-
-
-
-
-

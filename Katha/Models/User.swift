@@ -8,12 +8,19 @@
 import Foundation
 import FirebaseAuth
 
-class FirebaseUser {
-  let uid: String
-  let email: String
+class FirebaseUser: Codable {
+    let uid: String
+    let email: String
+    let fullName: String
+    let photoURL: String
+    let bio: String
 
-  init(user: FirebaseAuth.User) {
-    self.uid = user.uid
-    self.email = user.email!
-  }
+    init(uid: String, email: String, fullName: String, photoURL: String, bio: String) {
+        self.uid = uid
+        self.email = email
+        self.fullName = fullName
+        self.photoURL = photoURL
+        self.bio = bio
+    }
 }
+

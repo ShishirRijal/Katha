@@ -16,6 +16,11 @@ struct RegistrationForm: View {
             Text("Full Name")
             CustomTextField(placeholder: "Shishir Rijal", text: $authViewModel.fullName)
 
+          Spacer().frame(height: 25)
+
+          Text("Your Bio")
+          CustomTextField(placeholder: "iOS App Developer", text: $authViewModel.bio)
+
             Spacer().frame(height: 25)
 
             Text("Email")
