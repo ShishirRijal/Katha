@@ -32,7 +32,7 @@ struct SplashScreenView: View {
 
                 Task {
                     authViewModel.checkAuthentication() // Ensure authentication check happens
-
+                    debugPrint("Splash task on appear: is authenticated -> \(authViewModel.isAuthenticated)")
                 }
                 print("User authenticated: \(authViewModel.isAuthenticated)")
               })

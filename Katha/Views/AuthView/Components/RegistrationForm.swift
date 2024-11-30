@@ -15,16 +15,26 @@ struct RegistrationForm: View {
         VStack(alignment: .leading) {
             Text("Full Name")
             CustomTextField(placeholder: "Shishir Rijal", text: $authViewModel.fullName)
+                .autocapitalization(.words)
+
+          Spacer().frame(height: 25)
+
+          Text("Your Bio")
+          CustomTextField(placeholder: "iOS App Developer", text: $authViewModel.bio)
+
 
             Spacer().frame(height: 25)
 
             Text("Email")
             CustomTextField(placeholder: "rijal.shishir@test.com", text: $authViewModel.email)
+                .autocapitalization(.none)
 
             Spacer().frame(height: 25)
 
             Text("Password")
             CustomSecureField(placeholder: "Create a strong password", text: $authViewModel.password)
+                .autocorrectionDisabled()
+                .autocapitalization(.none)
         }
         .font(.bodyFont())
         .padding(.vertical, 10)

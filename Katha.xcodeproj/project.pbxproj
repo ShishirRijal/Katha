@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DB2115EE2CE71723008C237C /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2115ED2CE71723008C237C /* SplashScreen.swift */; };
-		DB2115F02CE71A50008C237C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB2115EF2CE71A50008C237C /* GoogleService-Info.plist */; };
 		DB2115F32CE71BA9008C237C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DB2115F22CE71BA9008C237C /* FirebaseAuth */; };
 		DB2115F52CE71BA9008C237C /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = DB2115F42CE71BA9008C237C /* FirebaseCore */; };
 		DB2115F72CE71BA9008C237C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DB2115F62CE71BA9008C237C /* FirebaseDatabase */; };
@@ -21,6 +20,7 @@
 		DB615D412CAF332F00CD1813 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB615D402CAF332F00CD1813 /* ContentView.swift */; };
 		DB615D432CAF333000CD1813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB615D422CAF333000CD1813 /* Assets.xcassets */; };
 		DB615D462CAF333000CD1813 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB615D452CAF333000CD1813 /* Preview Assets.xcassets */; };
+		DB6186C22CF4E76F009DD895 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB6186C12CF4E76F009DD895 /* GoogleService-Info.plist */; };
 		DB77EF8B2CF3BC0B0071F6BC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF8A2CF3BC0B0071F6BC /* AuthService.swift */; };
 		DB77EF8E2CF3C0DB0071F6BC /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF8D2CF3C0DB0071F6BC /* AuthError.swift */; };
 		DB77EF922CF3C5340071F6BC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF912CF3C5340071F6BC /* HeaderView.swift */; };
@@ -58,7 +58,6 @@
 
 /* Begin PBXFileReference section */
 		DB2115ED2CE71723008C237C /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
-		DB2115EF2CE71A50008C237C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB32CCED2CB558F900AB5887 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		DB32CCEF2CB5725800AB5887 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		DB32CCF12CB5861D00AB5887 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		DB615D402CAF332F00CD1813 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB615D422CAF333000CD1813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB615D452CAF333000CD1813 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DB6186C12CF4E76F009DD895 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB77EF8A2CF3BC0B0071F6BC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DB77EF8D2CF3C0DB0071F6BC /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		DB77EF912CF3C5340071F6BC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -138,9 +138,9 @@
 		DB615D3D2CAF332F00CD1813 /* Katha */ = {
 			isa = PBXGroup;
 			children = (
+				DB6186C12CF4E76F009DD895 /* GoogleService-Info.plist */,
 				DB77EF8C2CF3C0D10071F6BC /* Utils */,
 				DB77EF892CF3BBFA0071F6BC /* Services */,
-				DB2115EF2CE71A50008C237C /* GoogleService-Info.plist */,
 				DB7EDDAE2CB04D3900556006 /* Models */,
 				DBFABEE62CAFE110006ABECA /* Components */,
 				DBFABECC2CAF4263006ABECA /* Info.plist */,
@@ -343,7 +343,7 @@
 			files = (
 				DBFABED02CAF435E006ABECA /* PlayfairDisplay-Bold.ttf in Resources */,
 				DBFABED62CAF441C006ABECA /* Poppins-Bold.ttf in Resources */,
-				DB2115F02CE71A50008C237C /* GoogleService-Info.plist in Resources */,
+				DB6186C22CF4E76F009DD895 /* GoogleService-Info.plist in Resources */,
 				DBFABED72CAF441C006ABECA /* Poppins-Regular.ttf in Resources */,
 				DBFABED12CAF435E006ABECA /* PlayfairDisplay-Medium.ttf in Resources */,
 				DBFABED22CAF435E006ABECA /* PlayfairDisplay-Regular.ttf in Resources */,
@@ -526,6 +526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Katha/Preview Content\"";
+				DEVELOPMENT_TEAM = 6R7W76M67X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Katha/Info.plist;
@@ -555,6 +556,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Katha/Preview Content\"";
+				DEVELOPMENT_TEAM = 6R7W76M67X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Katha/Info.plist;
