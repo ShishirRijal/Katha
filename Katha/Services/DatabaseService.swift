@@ -36,4 +36,22 @@ class DatabaseService {
 
         try await docRef.setData(articleData)
     }
+
+    func fetchAllArticles() async throws -> [ArticleModel] {
+        let snapshot = try await db.collection("articles")
+            .getDocuments()
+        let articles = snapshot.documents.compactMap { doc in
+            try? doc.data(as: ArticleModel.self)
+        }
+        return articles
+    }
+
+    func fetchUserProfile(id: String) async throws -> UserModel {
+        let doc = try await db.collection("users").document(id).getDocument()
+        guard let data = doc.data() else {
+            throw AuthError.userNotFound
+        }
+        return try Firestore.Decoder().decode(UserModel.self, from: data)
+    }
+
 }

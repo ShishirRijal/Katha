@@ -80,13 +80,13 @@ struct ProfileView: View {
                         }
                         
                         // Recent Articles
-                        VStack(spacing: 16) {
-                            ForEach(user.recentArticles) { article in
-                                CustomArticleCard(article: article, isBookmark: false)
-                                Divider().padding(10)
-                            }
-                            
-                        }
+//                        VStack(spacing: 16) {
+//                            ForEach(user.recentArticles) { article in
+//                                CustomArticleCard(article: article, isBookmark: false)
+//                                Divider().padding(10)
+//                            }
+//                            
+//                        }
 
                     }
                     .padding()

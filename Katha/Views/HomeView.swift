@@ -8,33 +8,59 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+    @StateObject var viewModel = HomeViewModel()
+
     var body: some View {
-        ScrollView {
+        ZStack {
             VStack {
                 // header
                 Header()
                 // Articles
                 ScrollView {
-                    ForEach(0..<dummyArticles.count) { index in
+                    ForEach(viewModel.articles) { article in
                         // Article Card
                         VStack {
-                            CustomArticleCard(article: dummyArticles[index], isBookmark: false)
-                            
+                            CustomArticleCard(article: article, isBookmark: false)
+
                             Divider()
                                 .overlay(Color.theme.gray)
                                 .padding(.vertical, 10)
                         }
                     }
                 }
+
             }
           
             .padding(.horizontal)
-            
+
+        // In case of error
+            if(viewModel.isError) {
+                ContentUnavailableView(label: {
+                    Label("An error occurred while fetching articles!", systemImage: "exclamationmark.icloud.fill")
+                }, actions: {
+                    Button(action: {
+                        Task {
+                            await viewModel.loadArticles()
+                        }
+                    }) {
+                        Text("Refresh")
+
+                    }
+                })
+                .padding(.bottom, 200)
+            }
         }
-        .background(Color.theme.background
-//            .ignoresSafeArea()
-        )
+        .onAppear {
+            Task {
+                await viewModel.loadArticles()
+            }
+        }
+        .overlay(content: {
+            if viewModel.isLoading {
+                ProgressView("Loading articles...")
+            }
+        })
+        .background(Color.theme.background)
     }
     
     

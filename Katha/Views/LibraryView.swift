@@ -14,8 +14,8 @@ struct LibraryView: View {
                 Header()
                     .padding(.bottom, 20)
                 
-              ForEach(dummyArticles.count-4..<dummyArticles.count) { index in
-                        CustomArticleCard(article: dummyArticles[index], isBookmark: true)
+                ForEach(0..<8) { index in
+                        CustomArticleCard(article: dummyArticle, isBookmark: true)
                         Divider()
                         .padding(.vertical, 10)
                 }
