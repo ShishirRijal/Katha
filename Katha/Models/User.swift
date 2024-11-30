@@ -26,4 +26,4 @@ class UserModel: Codable {
     }
 }
 
-let dummyUserModel: UserModel = UserModel(id: "uniqye_id", email: "ritch@gmail.com", fullName: "Ritchie Fredric", photoURL: "https://img.freepik.com/free-vector/smiling-redhaired-cartoon-boy_1308-174709.jpg", bio: "Mobile App Developer | ML Enthusiast", followers: 3478)
+let dummyUserModel: UserModel = UserModel(id: "QpPevRkSRZRs3JakIbTJVOzTf1m2", email: "ritch@gmail.com", fullName: "Ritchie Fredric", photoURL: "https://img.freepik.com/free-vector/smiling-redhaired-cartoon-boy_1308-174709.jpg", bio: "Mobile App Developer | ML Enthusiast", followers: 3478)

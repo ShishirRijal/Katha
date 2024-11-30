@@ -11,56 +11,60 @@ struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
 
     var body: some View {
-        ZStack {
-            VStack {
-                // header
-                Header()
-                // Articles
-                ScrollView {
-                    ForEach(viewModel.articles) { article in
-                        // Article Card
-                        VStack {
-                            CustomArticleCard(article: article, isBookmark: false)
-
-                            Divider()
-                                .overlay(Color.theme.gray)
-                                .padding(.vertical, 10)
+        NavigationStack {
+            ZStack {
+                VStack {
+                    // header
+                    Header()
+                    // Articles
+                    ScrollView {
+                        ForEach(viewModel.articles) { article in
+                            // Article Card
+                            VStack {
+                                NavigationLink(destination: ArticleDetailView(article: article)) {
+                                    CustomArticleCard(article: article, isBookmark: false)
+                                        .foregroundColor(.theme.primary)
+                                }
+                                Divider()
+                                    .overlay(Color.theme.gray)
+                                    .padding(.vertical, 10)
+                            }
                         }
                     }
+
                 }
+              
+                .padding(.horizontal)
 
-            }
-          
-            .padding(.horizontal)
+            // In case of error
+                if(viewModel.isError) {
+                    ContentUnavailableView(label: {
+                        Label("An error occurred while fetching articles!", systemImage: "exclamationmark.icloud.fill")
+                    }, actions: {
+                        Button(action: {
+                            Task {
+                                await viewModel.loadArticles()
+                            }
+                        }) {
+                            Text("Refresh")
 
-        // In case of error
-            if(viewModel.isError) {
-                ContentUnavailableView(label: {
-                    Label("An error occurred while fetching articles!", systemImage: "exclamationmark.icloud.fill")
-                }, actions: {
-                    Button(action: {
-                        Task {
-                            await viewModel.loadArticles()
                         }
-                    }) {
-                        Text("Refresh")
-
-                    }
-                })
-                .padding(.bottom, 200)
+                    })
+                    .padding(.bottom, 200)
+                }
             }
-        }
-        .onAppear {
-            Task {
-                await viewModel.loadArticles()
+            .onAppear {
+                Task {
+                    await viewModel.loadArticles()
+                }
             }
-        }
-        .overlay(content: {
-            if viewModel.isLoading {
-                ProgressView("Loading articles...")
-            }
-        })
+            .overlay(content: {
+                if viewModel.isLoading {
+                    ProgressView("Loading articles...")
+                }
+            })
         .background(Color.theme.background)
+        }
     }
     
     

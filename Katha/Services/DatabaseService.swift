@@ -37,15 +37,22 @@ class DatabaseService {
         try await docRef.setData(articleData)
     }
 
+
+    /// Fetch all articles
     func fetchAllArticles() async throws -> [ArticleModel] {
-        let snapshot = try await db.collection("articles")
-            .getDocuments()
-        let articles = snapshot.documents.compactMap { doc in
-            try? doc.data(as: ArticleModel.self)
-        }
-        return articles
+        let snapshot = try await db.collection("articles").getDocuments()
+        return try await processArticles(from: snapshot.documents)
     }
 
+    /// Fetch articles by a specific user ID
+    func fetchArticlesByUser(userId: String) async throws -> [ArticleModel] {
+        let snapshot = try await db.collection("articles")
+            .whereField("userId", isEqualTo: userId)
+            .getDocuments()
+        return try await processArticles(from: snapshot.documents)
+    }
+
+    /// Fetch User by a specific user ID
     func fetchUserProfile(id: String) async throws -> UserModel {
         let doc = try await db.collection("users").document(id).getDocument()
         guard let data = doc.data() else {
@@ -53,5 +60,23 @@ class DatabaseService {
         }
         return try Firestore.Decoder().decode(UserModel.self, from: data)
     }
+
+    // MARK: - Private Helper Methods
+
+    /// Process articles by decoding and enriching them with author details
+    private func processArticles(from documents: [QueryDocumentSnapshot]) async throws -> [ArticleModel] {
+        var articles = documents.compactMap { doc in
+            try? doc.data(as: ArticleModel.self)
+        }
+
+        for index in articles.indices {
+            let userId = articles[index].userId
+            let user = try await fetchUserProfile(id: userId)
+            articles[index].author = user
+        }
+
+        return articles
+    }
+
 
 }
