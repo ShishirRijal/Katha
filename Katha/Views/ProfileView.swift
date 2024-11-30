@@ -13,79 +13,96 @@ struct ProfileView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(spacing: 20) {
-                    // Profile Header
-                    HStack {
-                        Image(user.profileImageURL)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 80, height: 80)
-                            .clipShape(Circle())
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        // logout
+                        authVM.logout()
+                    }, label: {
+                        Image(systemName: "gearshape") // rectangle.portrait.and.arrow.right
+                            .foregroundColor(.primary)
+                            .font(.title2)
+                    })
+                    .padding(.horizontal)
+                }
 
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text(user.name)
-                                .font(.title2)
-                                .fontWeight(.bold)
-                            Text(user.username)
-                                .font(.subheadline)
-                            Text(user.bio)
-                                .font(.body)
-                                .lineLimit(3)
-                        }
-                        Spacer()
-                    }
-                    
-                    // Statistics
-                    HStack(spacing: 40) {
-                        StatsView(label: "Articles", value: user.articleCount)
-                       
-                        VerticalDivider()
-                        
-                        StatsView(label: "Followers", value: user.followerCount)
-                        
-                        VerticalDivider()
-                        
-                        StatsView(label: "Following", value: user.followingCount)
-                    }
-                    
-                    Divider()
-                        .frame(height: 2)
-                        .background(.lightGray)
-                        .padding(.top, 20)
-                    
-                    
-                    
-                    HStack {
-                        Text("Recent Articles")
-                            .font(.custom(.poppinsBold, size: 20))
-                            .foregroundColor(Color.theme.primary)
-                        
-                        Spacer()
-                    }
-                    
-                    // Recent Articles
-                    VStack(spacing: 16) {
-                        ForEach(user.recentArticles) { article in
-                            CustomArticleCard(article: article, isBookmark: false)
-                            Divider().padding(10)
+
+                ScrollView {
+                    VStack(spacing: 20) {
+                        // Profile Header
+                        HStack {
+                            Image(user.profileImageURL)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text(user.name)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                Text(user.username)
+                                    .font(.subheadline)
+                                Text(user.bio)
+                                    .font(.body)
+                                    .lineLimit(3)
+                            }
+                            Spacer()
                         }
                         
-                    }
-                
-                  Button(action: {
-                    authVM.logout()
+                        // Statistics
+                        HStack(spacing: 40) {
+                            StatsView(label: "Articles", value: user.articleCount)
+                           
+                            VerticalDivider()
+                            
+                            StatsView(label: "Followers", value: user.followerCount)
+                            
+                            VerticalDivider()
+                            
+                            StatsView(label: "Following", value: user.followingCount)
+                        }
+                        
+                        Divider()
+                            .frame(height: 2)
+                            .background(.lightGray)
+                            .padding(.top, 20)
+                        
+                        
+                        
+                        HStack {
+                            Text("Recent Articles")
+                                .font(.custom(.poppinsBold, size: 20))
+                                .foregroundColor(Color.theme.primary)
+                            
+                            Spacer()
+                        }
+                        
+                        // Recent Articles
+                        VStack(spacing: 16) {
+                            ForEach(user.recentArticles) { article in
+                                CustomArticleCard(article: article, isBookmark: false)
+                                Divider().padding(10)
+                            }
+                            
+                        }
 
-                  }, label: {
-                    Text("Log Out")
-                  })
-                  .padding()
-                  .foregroundColor(.white)
-                  .background(Color.red.cornerRadius(10))
+                    }
+                    .padding()
 
                 }
-                .padding()
             }
+        }
+        .safeAreaInset(edge: .bottom, alignment: .trailing) {
+            Image(systemName: "square.and.pencil")
+                .font(.title2)
+                .padding()
+                .foregroundColor(.theme.white)
+                .background(Color.theme.accent)
+                .clipShape(Circle())
+                .padding(.horizontal)
+
         }
     }
 }
