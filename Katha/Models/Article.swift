@@ -15,7 +15,7 @@ struct ArticleModel: Identifiable, Codable {
     var content: String
     var userId: String
     var timestamp: Timestamp
-    var user: FirebaseUser?
+    var user: UserModel?
 }
 
 
