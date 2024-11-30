@@ -62,6 +62,17 @@ class DatabaseService {
         return try await processArticles(from: snapshot.documents)
     }
 
+    // Fetch recent articles by the user
+    func fetchRecentArticles(userId: String) async throws -> [ArticleModel] {
+        let snapshot = try await db.collection("articles")
+            .whereField("userId", isEqualTo: userId)
+//            .order(by: "timestamp", descending: true)
+//            .limit(to: 5)
+            .getDocuments()
+
+        return try await processArticles(from: snapshot.documents)
+    }
+
     /// Fetch User by a specific user ID
     func fetchUserProfile(id: String) async throws -> UserModel {
         let doc = try await db.collection("users").document(id).getDocument()

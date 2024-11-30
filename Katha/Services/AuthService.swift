@@ -47,6 +47,11 @@ class AuthService {
         return Auth.auth().currentUser != nil
     }
 
+    // Get currently loggedin user id
+    func getUserId() -> String? {
+        return Auth.auth().currentUser?.uid
+    }
+
     private func getFollowers(min: Int = 250, max: Int = 100000) -> Int {
         guard min < max else {
             print("Invalid range: min must be less than max.")

@@ -32,7 +32,7 @@ struct MainTabView: View {
                     }
                     .tag(Tabs.library)
             
-            ProfileView(user: dummyUser)
+            ProfileView()
                     .tabItem {
                         Image(systemName: selectedTab == .profile ? "person.fill" : "person")
                     }
