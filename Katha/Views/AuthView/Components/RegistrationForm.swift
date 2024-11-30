@@ -16,9 +16,6 @@ struct RegistrationForm: View {
             Text("Full Name")
             CustomTextField(placeholder: "Shishir Rijal", text: $authViewModel.fullName)
                 .autocapitalization(.words)
-                .onSubmit() {
-
-                }
 
           Spacer().frame(height: 25)
 

@@ -20,16 +20,9 @@ class AuthViewModel: ObservableObject {
     @Published var bio: String = ""
     @Published var errorMessage: String? = nil
     @Published var isError: Bool = false
-    @Published var isLoading: Bool = false {
-        didSet {
-            if isLoading {
-                print("Loading started.")
-            } else {
-                print("Loading stopped.")
-            }
-        }
-    }
+    @Published var isLoading: Bool = false
     @Published var isAuthenticated: Bool = false
+    
 
     // Computed property for error message
     var getErrorMessage: String {
