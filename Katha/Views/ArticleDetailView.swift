@@ -9,67 +9,120 @@ import SwiftUI
 
 struct ArticleDetailView: View {
     let article: ArticleModel
+    @Environment(\.presentationMode) var presentationMode
+    @StateObject var viewModel = ArticleDetailViewModel()
 
     var body: some View {
-        NavigationView {
-            ScrollView {
-                
-                VStack (alignment: .leading) {
+        NavigationStack {
+            VStack {
+                HStack (spacing: 20) {
+                    // Back Button
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Image(systemName: "chevron.backward")
+                    })
                     
-                    // Article Title
-                    Text(article.title)
-                        .font(.custom(.poppinsBold, size: 30))
-                    
-                    // Article Author
-                    ArticleAuthorHeader(article: article)
+                    Spacer()
 
-                    // Article Detail
-                    Text(article.content)
+                    // Share Button
+                    Button(action: {
+                       // Share
+                    }, label: {
+                        Image(systemName: "square.and.arrow.up")
+                    })
 
-                    
-                    // Tags [Random For Now]
-                    ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(spacing: 20) {
-                                    ForEach(ArticleTagGenerator.generateTags(count: 5), id: \.self) {tag in
-                                            CustomTagChip(tag)
-                                    }
-                                
-                                }
-                            }
-                    .padding(.vertical)
-                    
+                    // Menu Button
+                    Button(action: {
+                       // Share
+                    }, label: {
+                        Image(systemName: "ellipsis")
+                    })
 
-                    // Author Detail
-                    AuthorDetail(author: article.author!)
-
-                    
-                    VStack (alignment: .center) {
-                        Text("• • •")
-                            .foregroundColor(Color.theme.primary)
-                            .font(.title2)
-                    }
-                    .frame(maxWidth: .infinity)
-                    
-                    
-                                            
-                    Text("More from \(article.author!.fullName)")
-                        .font(.custom(.poppinsMedium, size: 24))
-                        .foregroundColor(Color.theme.primary)
-                    
-                    // Recommended Articles
-                    ForEach(0..<2) {index in
-                        CustomArticleCard(article: dummyArticle, isBookmark: false)
-                            
-                        Divider()
-                            .padding(.vertical, 20)
-                    }
-                    
                 }
+                .font(.title2)
+                .foregroundColor(.theme.primary)
                 .padding(.horizontal)
+                .padding(.bottom, 10)
+
+                ScrollView {
+                    
+                    VStack (alignment: .leading) {
+                        
+                        // Article Title
+                        Text(article.title)
+                            .font(.custom(.poppinsBold, size: 30))
+                        
+                        // Article Author
+                        ArticleAuthorHeader(article: article)
+
+                        // Article Detail
+                        Text(article.content)
+
+                        
+                        // Tags [Random For Now]
+                        ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack(spacing: 20) {
+                                        ForEach(ArticleTagGenerator.generateTags(count: 5), id: \.self) {tag in
+                                                CustomTagChip(tag)
+                                        }
+                                    
+                                    }
+                                }
+                        .padding(.vertical)
+                        
+
+                        // Author Detail
+                        AuthorDetail(author: article.author!)
+
+                        
+                        VStack (alignment: .center) {
+                            Text("• • •")
+                                .foregroundColor(Color.theme.primary)
+                                .font(.title2)
+                        }
+                        .frame(maxWidth: .infinity)
+                        
+                        
+                        VStack (alignment: .center) {
+                            // More Articles from current article Author
+                            Text("More from \(article.author!.fullName)")
+                                .font(.custom(.poppinsMedium, size: 24))
+                                .foregroundColor(Color.theme.primary)
+
+                            if(viewModel.isLoading) {
+                                ProgressView("Loading...")
+                            }
+                            else if viewModel.articlesBySameAuthor.isEmpty {
+                                Text("No other articles available.")
+                                    .foregroundColor(.gray)
+                               }
+                            else {
+                                   ForEach(viewModel.articlesBySameAuthor) { authorArticle in
+                                       // ignore what's being read
+                                       if(authorArticle.id != article.id) {
+                                           CustomArticleCard(article: authorArticle, isBookmark: false)
+
+                                            Divider()
+                                               .padding(.vertical, 20)
+                                       }
+                                   }
+                               }
+                        }
+
+                    }
+                    .padding(.horizontal)
+                    .onAppear {
+                       Task {
+                           await viewModel.loadArticlesByUser(userId: article.userId)
+                       }
+                    }
+                }
             }
             .background(Color.theme.background)
         }
-        
+        .navigationBarBackButtonHidden(true)
+
     }
 }
 
@@ -182,4 +235,5 @@ struct ArticleAuthorHeader: View {
 
 #Preview {
     ArticleDetailView(article: dummyArticle)
+        .preferredColorScheme(.dark)
 }

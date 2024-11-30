@@ -22,12 +22,6 @@ class HomeViewModel: ObservableObject {
         do {
             // Fetch all articles
             var fetchedArticles = try await DatabaseService.shared.fetchAllArticles()
-            // Fetch user details for each article
-            for index in fetchedArticles.indices {
-                let userId = fetchedArticles[index].userId
-                let user = try await DatabaseService.shared.fetchUserProfile(id: userId)
-                fetchedArticles[index].author = user
-            }
             self.articles = fetchedArticles
             self.isLoading = false
         } catch {

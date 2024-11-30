@@ -15,7 +15,7 @@ struct CustomArticleCard: View {
     var body: some View {
         VStack(alignment: .leading) {
             
-            ArticleAuthor(author: article.author!.fullName, image: article.author!.photoURL)
+            ArticleAuthor(author: article.author?.fullName ?? "Unknown", image: article.author?.photoURL ?? "")
 
             VStack(alignment: .leading) {
                 // Introduction

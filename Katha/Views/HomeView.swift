@@ -23,6 +23,7 @@ struct HomeView: View {
                             VStack {
                                 NavigationLink(destination: ArticleDetailView(article: article)) {
                                     CustomArticleCard(article: article, isBookmark: false)
+                                        .foregroundColor(.theme.primary)
                                 }
                                 Divider()
                                     .overlay(Color.theme.gray)
