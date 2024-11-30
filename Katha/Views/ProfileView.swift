@@ -95,13 +95,15 @@ struct ProfileView: View {
             }
         }
         .safeAreaInset(edge: .bottom, alignment: .trailing) {
-            Image(systemName: "square.and.pencil")
-                .font(.title2)
-                .padding()
-                .foregroundColor(.theme.white)
-                .background(Color.theme.accent)
-                .clipShape(Circle())
-                .padding(.horizontal)
+            NavigationLink(destination: WriteArticleView()) {
+                Image(systemName: "square.and.pencil")
+                    .font(.title2)
+                    .padding()
+                    .foregroundColor(.theme.white)
+                    .background(Color.theme.accent)
+                    .clipShape(Circle())
+                    .padding()
+            }
 
         }
     }

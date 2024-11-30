@@ -22,6 +22,8 @@
 		DB615D462CAF333000CD1813 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB615D452CAF333000CD1813 /* Preview Assets.xcassets */; };
 		DB6186C22CF4E76F009DD895 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB6186C12CF4E76F009DD895 /* GoogleService-Info.plist */; };
 		DB6186CC2CFB31C6009DD895 /* WriteArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186CB2CFB31C6009DD895 /* WriteArticleView.swift */; };
+		DB6186CE2CFB4520009DD895 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186CD2CFB4520009DD895 /* DatabaseService.swift */; };
+		DB6186D02CFB4A19009DD895 /* WriteArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186CF2CFB4A19009DD895 /* WriteArticleViewModel.swift */; };
 		DB77EF8B2CF3BC0B0071F6BC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF8A2CF3BC0B0071F6BC /* AuthService.swift */; };
 		DB77EF8E2CF3C0DB0071F6BC /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF8D2CF3C0DB0071F6BC /* AuthError.swift */; };
 		DB77EF922CF3C5340071F6BC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF912CF3C5340071F6BC /* HeaderView.swift */; };
@@ -69,6 +71,8 @@
 		DB615D452CAF333000CD1813 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DB6186C12CF4E76F009DD895 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB6186CB2CFB31C6009DD895 /* WriteArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteArticleView.swift; sourceTree = "<group>"; };
+		DB6186CD2CFB4520009DD895 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		DB6186CF2CFB4A19009DD895 /* WriteArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteArticleViewModel.swift; sourceTree = "<group>"; };
 		DB77EF8A2CF3BC0B0071F6BC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DB77EF8D2CF3C0DB0071F6BC /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		DB77EF912CF3C5340071F6BC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				DB77EF8A2CF3BC0B0071F6BC /* AuthService.swift */,
+				DB6186CD2CFB4520009DD895 /* DatabaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				DBFABEE02CAFBEF1006ABECA /* AuthViewModel.swift */,
 				DBFABEE42CAFC633006ABECA /* RegistrationViewModel.swift */,
 				DBFABEEF2CAFE964006ABECA /* LoginViewModel.swift */,
+				DB6186CF2CFB4A19009DD895 /* WriteArticleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -364,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB77EF942CF3C5520071F6BC /* TermsView.swift in Sources */,
+				DB6186CE2CFB4520009DD895 /* DatabaseService.swift in Sources */,
 				DB2115EE2CE71723008C237C /* SplashScreen.swift in Sources */,
 				DB32CCF22CB5861D00AB5887 /* Date.swift in Sources */,
 				DBFABEE82CAFE13E006ABECA /* CustomLoginCard.swift in Sources */,
@@ -387,6 +394,7 @@
 				DB77EF8E2CF3C0DB0071F6BC /* AuthError.swift in Sources */,
 				DB77EF8B2CF3BC0B0071F6BC /* AuthService.swift in Sources */,
 				DBFABEE52CAFC633006ABECA /* RegistrationViewModel.swift in Sources */,
+				DB6186D02CFB4A19009DD895 /* WriteArticleViewModel.swift in Sources */,
 				DB77EF9A2CF3C62C0071F6BC /* BackButton.swift in Sources */,
 				DB32CCF02CB5725800AB5887 /* Author.swift in Sources */,
 				DBFABEF22CB012CF006ABECA /* MainTabView.swift in Sources */,
