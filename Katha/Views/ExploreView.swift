@@ -75,13 +75,14 @@ struct ExploreView: View {
                                 .foregroundColor(.theme.primary)
                             }
                         }
-
-
                             
                         Spacer()
                         
                     }
-
+                }
+                .refreshable {
+                    await viewModel.loadAllArticles(forceReload: true)
+                    await viewModel.loadTrendingArticles(forceReload: true)
                 }
 
             }

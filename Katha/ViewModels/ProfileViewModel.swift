@@ -16,7 +16,13 @@ class ProfileViewModel: ObservableObject {
     private let authService = AuthService()
 
     @MainActor
-    func fetchUserProfile() async {
+    func fetchUserProfile(forceReload: Bool = false) async {
+        // Reload only if forceReload is true or articles are empty
+        guard forceReload || user == nil else {
+            print("User profile already loaded. Skipping fetch.")
+            return
+        }
+
         isLoading = true
         do {
             guard let userId = authService.getUserId() else {

@@ -74,4 +74,5 @@ struct RegistrationView: View {
 
 #Preview {
     RegistrationView().environmentObject(AuthViewModel())
+        .preferredColorScheme(.dark)
 }
