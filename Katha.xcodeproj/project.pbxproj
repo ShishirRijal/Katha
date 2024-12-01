@@ -30,6 +30,7 @@
 		DB6186D82CFB9AE6009DD895 /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186D72CFB9AE6009DD895 /* ArticleDetailViewModel.swift */; };
 		DB6186DA2CFBAA95009DD895 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186D92CFBAA95009DD895 /* ExploreViewModel.swift */; };
 		DB6186DE2CFBBC13009DD895 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186DD2CFBBC13009DD895 /* ProfileViewModel.swift */; };
+		DB6186E42CFC379F009DD895 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB6186E22CFC379F009DD895 /* Model.xcdatamodeld */; };
 		DB77EF8B2CF3BC0B0071F6BC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF8A2CF3BC0B0071F6BC /* AuthService.swift */; };
 		DB77EF8E2CF3C0DB0071F6BC /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF8D2CF3C0DB0071F6BC /* AuthError.swift */; };
 		DB77EF922CF3C5340071F6BC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF912CF3C5340071F6BC /* HeaderView.swift */; };
@@ -85,6 +86,7 @@
 		DB6186D72CFB9AE6009DD895 /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
 		DB6186D92CFBAA95009DD895 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		DB6186DD2CFBBC13009DD895 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		DB6186E32CFC379F009DD895 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		DB77EF8A2CF3BC0B0071F6BC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DB77EF8D2CF3C0DB0071F6BC /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		DB77EF912CF3C5340071F6BC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				DB615D402CAF332F00CD1813 /* ContentView.swift */,
 				DB615D422CAF333000CD1813 /* Assets.xcassets */,
 				DB615D442CAF333000CD1813 /* Preview Content */,
+				DB6186E22CFC379F009DD895 /* Model.xcdatamodeld */,
 			);
 			path = Katha;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				DB6186DE2CFBBC13009DD895 /* ProfileViewModel.swift in Sources */,
 				DB77EF982CF3C5770071F6BC /* RegistrationForm.swift in Sources */,
 				DBFABEEC2CAFE39F006ABECA /* CustomTextField.swift in Sources */,
+				DB6186E42CFC379F009DD895 /* Model.xcdatamodeld in Sources */,
 				DBFABEC92CAF373C006ABECA /* AuthView.swift in Sources */,
 				DB32CCEE2CB558F900AB5887 /* ArticleDetailView.swift in Sources */,
 				DBFABEF42CB013F3006ABECA /* HomeView.swift in Sources */,
@@ -675,6 +679,20 @@
 			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		DB6186E22CFC379F009DD895 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DB6186E32CFC379F009DD895 /* Model.xcdatamodel */,
+			);
+			currentVersion = DB6186E32CFC379F009DD895 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = /Users/shishirrijal/Shishir/Swift/Katha/Katha/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DB615D332CAF332F00CD1813 /* Project object */;
 }
