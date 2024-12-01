@@ -22,11 +22,15 @@ struct LibraryView: View {
                   ScrollView {
                       ForEach(viewModel.articles) { article in
                           NavigationLink(destination: ArticleDetailView(article: article, isBookmarked: true)) {
-                              CustomArticleCard(article: article, isBookmark: true)
-
-                              Divider()
+                              VStack {
+                                  CustomArticleCard(article: article, isBookmark: true)
+                                      .foregroundColor(.theme.primary)
+                                  Divider()
+                                      .foregroundColor(.theme.lightGray)
+                              }
 
                           }
+
                       }
                   }
                 }

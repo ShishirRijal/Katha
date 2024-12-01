@@ -8,14 +8,14 @@
 import Foundation
 
 class LibraryViewModel: ObservableObject {
-    @Published var articles: [ArticleModel] = []
+    @Published var articles: [ArticleModel] = [dummyArticle, dummyArticle]
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     
     private let databaseService = DatabaseService.shared
 
     func fetchArticles() {
-        self.articles = CoreDataManager.shared.fetchAllBookmarkedArticles()
+//        self.articles = CoreDataManager.shared.fetchAllBookmarkedArticles()
         print("fetched bookmarked articles: \(articles.count)")
 
     }
