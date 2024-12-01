@@ -9,8 +9,18 @@ import SwiftUI
 
 struct ArticleDetailView: View {
     let article: ArticleModel
+    let isBookmarked: Bool // not fetching from article.isBookmarked for differentiating with offline articles
+
+    init(article: ArticleModel, isBookmarked: Bool = false) {
+        self.article = article
+        self.isBookmarked = isBookmarked
+    }
+
+
+
     @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel = ArticleDetailViewModel()
+
 
     var body: some View {
         NavigationStack {
@@ -76,43 +86,46 @@ struct ArticleDetailView: View {
                                 }
                         .padding(.vertical)
                         
+                    // Hide for Bookmarks
+                        if(!isBookmarked) {
 
-                        // Author Detail
-                        AuthorDetail(author: article.author!)
+                            // Author Detail
+                            AuthorDetail(author: article.author!)
 
-                        
-                        VStack (alignment: .center) {
-                            Text("• • •")
-                                .foregroundColor(Color.theme.primary)
-                                .font(.title2)
-                        }
-                        .frame(maxWidth: .infinity)
-                        
-                        
-                        VStack (alignment: .center) {
-                            // More Articles from current article Author
-                            Text("More from \(article.author!.fullName)")
-                                .font(.custom(.poppinsMedium, size: 24))
-                                .foregroundColor(Color.theme.primary)
 
-                            if(viewModel.isLoading) {
-                                ProgressView("Loading...")
+                            VStack (alignment: .center) {
+                                Text("• • •")
+                                    .foregroundColor(Color.theme.primary)
+                                    .font(.title2)
                             }
-                            else if viewModel.articlesBySameAuthor.isEmpty {
-                                Text("No other articles available.")
-                                    .foregroundColor(.gray)
-                               }
-                            else {
-                                   ForEach(viewModel.articlesBySameAuthor) { authorArticle in
-                                       // ignore what's being read
-                                       if(authorArticle.id != article.id) {
-                                           CustomArticleCard(article: authorArticle, isBookmark: false)
+                            .frame(maxWidth: .infinity)
 
-                                            Divider()
-                                               .padding(.vertical, 20)
+
+                            VStack (alignment: .center) {
+                                // More Articles from current article Author
+                                Text("More from \(article.author!.fullName)")
+                                    .font(.custom(.poppinsMedium, size: 24))
+                                    .foregroundColor(Color.theme.primary)
+
+                                if(viewModel.isLoading) {
+                                    ProgressView("Loading...")
+                                }
+                                else if viewModel.articlesBySameAuthor.isEmpty {
+                                    Text("No other articles available.")
+                                        .foregroundColor(.gray)
+                                   }
+                                else {
+                                       ForEach(viewModel.articlesBySameAuthor) { authorArticle in
+                                           // ignore what's being read
+                                           if(authorArticle.id != article.id) {
+                                               CustomArticleCard(article: authorArticle, isBookmark: false)
+
+                                                Divider()
+                                                   .padding(.vertical, 20)
+                                           }
                                        }
                                    }
-                               }
+                            }
                         }
 
                     }
@@ -215,15 +228,17 @@ struct ArticleAuthorHeader: View {
 
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: article.author!.photoURL), content: { Image in
-                Image
-                    .resizable()
-                    .aspectRatio(1, contentMode: .fit)
-                    .frame(height:45)
-                    .clipShape(Circle())
-            }, placeholder: {
-                Image(systemName: "person.fill")
-            })
+            if(!article.author!.photoURL.isEmpty) {
+                AsyncImage(url: URL(string: article.author!.photoURL), content: { Image in
+                    Image
+                        .resizable()
+                        .aspectRatio(1, contentMode: .fit)
+                        .frame(height:45)
+                        .clipShape(Circle())
+                }, placeholder: {
+                    Image(systemName: "person.fill")
+                })
+            }
 
             VStack (alignment: .leading) {
                 Text(article.author!.fullName)

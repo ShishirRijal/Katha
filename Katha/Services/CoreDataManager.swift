@@ -42,6 +42,7 @@ class CoreDataManager {
         bookmark.authorName = article.author?.fullName ?? "Unknown"
         bookmark.timestamp = article.timestamp.dateValue()
         bookmark.userId = article.userId
+        print("article \(article.id) saved locally!")
 
         saveContext()
     }
