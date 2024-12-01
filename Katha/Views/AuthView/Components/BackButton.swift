@@ -13,7 +13,7 @@ struct BackButton: View {
             NavigationLink(destination: AuthView()) {
                 Image(systemName: "chevron.left") // Back icon
                     .font(.title) // Adjust the size of the icon
-                    .foregroundColor(.black) // Set the icon color to black
+                    .foregroundColor(.theme.primary)
             }
             Spacer() // Spacer to push the button to the left
         }
