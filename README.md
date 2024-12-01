@@ -1,96 +1,115 @@
+# <img src="https://github.com/user-attachments/assets/02131ae0-6b66-451a-b86f-24dc926bccdd" alt="book" width="30" height="30"> Katha: A Medium Clone in SwiftUI
+
+<!-- Badges -->
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/02131ae0-6b66-451a-b86f-24dc926bccdd" alt="book" width="100" height="100">
+    
+[![Swift Version](https://img.shields.io/badge/Swift-5.5+-orange.svg?style=for-the-badge&logo=swift)](https://swift.org)
+[![SwiftUI](https://img.shields.io/badge/SwiftUI-brightgreen.svg?style=for-the-badge&logo=swift&logoColor=white)](https://developer.apple.com/xcode/swiftui/)
+[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)](https://firebase.google.com/)
+[![CoreData](https://img.shields.io/badge/CoreData-blue.svg?style=for-the-badge&logo=apple)](https://developer.apple.com/documentation/coredata)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+</div>
+
+<!-- Animated Title -->
+<h1 align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&pause=1000&color=F75C7E&width=600&lines=📖+Katha:+Your+Writing+Partner+✍️" alt="Typing SVG" />
+</h1>
+
+<!-- Project Description -->
+**Katha** is a beautifully designed blog platform inspired by **Medium**, built entirely in **SwiftUI** for iOS. It allows users to write, read, and interact with articles. The project incorporates a clean and modern interface, and makes use of popular technologies such as **Firebase** for authentication, database management, and **CoreData** for offline data storage.
+
+
+## ✨ Features
+
+- 🔐 **Authentication**: Seamless sign up, log in, and log out
+- 📝 **Articles**: Create, read, and explore articles with ease
+- 🔖 **Bookmarking**: Save articles for offline reading
+- 🔥 **Trending Articles**: Stay up-to-date with popular content
+- 🔍 **Powerful Search**: Find articles instantly
+- 👤 **Profile Management**: Personalize your writing space
+- 📴 **Offline Support**: Read anytime, anywhere
+
+## 🛠 Technologies Used
+
+- **SwiftUI**: 🖌 Modern, declarative UI framework
+- **Firebase**: 🔥 Robust backend services
+- **CoreData**: 💾 Local data persistence
+- **Async/Await**: ⚡ High-performance asynchronous operations
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+1. 💻 **Xcode** (latest version)
+2. 🔥 **Firebase account**
+
+### Setup
+
+```bash
+# Clone the repository 📦
+git clone https://github.com/ShishirRijal/Katha.git
+
+# Set up Firebase 🔐
+# Follow the detailed setup instructions in the README
+```
+
+
+## Screenshots
+---
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+<!-- Auth -->
+<img src="https://github.com/user-attachments/assets/2477a929-c13b-43fd-9e67-b108e7413dc4" alt="Screenshot 4" width="200"/>
+<img src="https://github.com/user-attachments/assets/e74aceca-9de0-495a-b70e-83a6bb537dc5" alt="Screenshot 3" width="200"/>
+<img src="https://github.com/user-attachments/assets/8212c3c0-9c92-427c-aca7-043fc11722b4" alt="Screenshot 1" width="200"/>
+<img src="https://github.com/user-attachments/assets/2a196d43-70da-4f39-ac2a-3430a02a90ca" alt="Screenshot 2" width="200"/>
+<img src="https://github.com/user-attachments/assets/e7b52145-8fbf-4740-ac68-47b4312a7aa1" alt="Screenshot 1" width="200"/>
+
+<!-- Home -->
+<img src="https://github.com/user-attachments/assets/203a11dd-77c8-40c3-88f1-bfcb7162ef4b" alt="Screenshot x" width="200"/>
+<img src="https://github.com/user-attachments/assets/ad0311e6-e4f3-49c3-a66f-f074e7a7a5a4" alt="Screenshot 14" width="200"/>
+<img src="https://github.com/user-attachments/assets/d2be3efb-3c5d-494c-9da0-d285d955b91d" alt="Screenshot 13" width="200"/>
+<img src="https://github.com/user-attachments/assets/92b2eeb8-5416-4d86-93f3-92e37fe2ee85" alt="Screenshot 12" width="200"/>
+
+<!-- Explore -->
+<img src="https://github.com/user-attachments/assets/80b778c8-2e55-4579-a904-c61081a0f22c" alt="Screenshot 11" width="200"/>
+<img src="https://github.com/user-attachments/assets/291f0016-3180-4414-b66f-de551b0b53ee" alt="Screenshot 10" width="200"/>
+<img src="https://github.com/user-attachments/assets/2558d40b-4e99-40ec-8710-68bf1f7f8546" alt="Screenshot 9" width="200"/>
+
+<!-- Library -->
+<img src="https://github.com/user-attachments/assets/668b69aa-5812-45f9-946b-0a843c5c12b9" alt="Screenshot 8" width="200"/>
+<img src="https://github.com/user-attachments/assets/23732d23-41b2-4218-9263-d5f50761e1de" alt="Screenshot 7" width="200"/>
+
+<!-- Profile -->
+<img src="https://github.com/user-attachments/assets/24ce3f9c-e8ca-409d-8a0b-c0c7694c6073" alt="Screenshot 6" width="200"/>
+<img src="https://github.com/user-attachments/assets/13f6cc90-3a37-4f95-8948-f7f4111803e1" alt="Screenshot 5" width="200"/>
+
+<!-- Write Article -->
+<img src="https://github.com/user-attachments/assets/9809b412-4e0d-422e-abdb-d78ea7cbda37" alt="Screenshot 4" width="200"/>
+<img src="https://github.com/user-attachments/assets/cd3a29bf-801b-4f54-bf00-6d07fd9f436a" alt="Screenshot 3" width="200"/>
+<img src="https://github.com/user-attachments/assets/1577c882-9315-4b89-88b9-7c193b58ef2d" alt="Screenshot 2" width="200"/>
+
 </div>
 
 
-# <img src="https://github.com/user-attachments/assets/02131ae0-6b66-451a-b86f-24dc926bccdd" alt="book" width="20" height="20"> Katha: A Medium Clone in SwiftUI
+## 🔮 Future Improvements
 
+- 🔔 Push Notifications
+- 💬 Comments Section
+- 👍 Advanced User Interactions
+- 🌓 Theme Support
+- 🏷 Enhanced Search Capabilities
 
-**Katha** is a SwiftUI-based learning project inspired by [Medium.com](https://medium.com). This app will implement key features like registration, login, writing and formatting articles, role-based access for readers and authors, and the ability to mark favorite articles, all while using the **MVVM (Model-View-ViewModel)** architecture.
+## 🤝 Contributing
 
+Contributions are welcome! 
 
-## Architecture: MVVM
-The project will follow the **MVVM** architecture, ensuring separation of concerns and maintainable code. Here's how each layer will function:
+- 🍴 Fork the repository
+- 🌿 Create a feature branch
+- 🚀 Submit a pull request
 
-- **Model**: Data representation (Article, User, etc.).
-- **View**: SwiftUI views that display data.
-- **ViewModel**: The logic and data-binding layer that communicates between the view and the model.
+## 📄 License
 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-
-## Project Setup
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/ShishirRijal/katha.git
-   ```
-
-2. **Install dependencies** (if using any package manager like **Cocoapods** or **SPM**):
-   ```bash
-   pod install
-   ```
-
-3. **Run the project**:
-   Open `Katha.xcodeproj` in Xcode and hit **Cmd+R** to build and run the app.
-
-
-<!--
-## Milestones and Progress
-
-### 1️⃣ User Authentication
-- [x] **Auth Screen**: Design and build the UI for inital auth screen showing all forms of authentications.
-- [x] **Registration Screen**: Design and build the UI for user registration.
-- [x] **Login Screen**: Design and build the UI for login.
-
-### 2️⃣ Article Management
-- [ ] **Write Article Screen**: Create a markdown editor for articles.
-- [ ] **Article Formatting**: Implement bold, italic, headings, lists, links, and other markdown-based formatting.
-- [x] **Read Article Screen**: Build the UI to read and display articles beautifully.
-
-### 3️⃣ Roles and Access Control
-- [ ] **Author Role**: Restrict the ability to write articles to users with an author role.
-- [ ] **Reader Role**: Readers should only be able to read and mark articles as favorites.
-
-### 4️⃣ Favorites and Persistence
-- [ ] **Mark as Favorite**: Implement functionality to allow users to mark articles as favorite.
-- [ ] **CoreData Integration**: Save favorite articles in local storage using CoreData.
-
-### 5️⃣ Networking and Offline Support
-- [ ] **Networking Layer**: Set up a networking layer to fetch, post, and update articles.
-- [ ] **Offline Handling**: Display cached articles and handle no-internet conditions.
-
-## Contributing
-Feel free to fork the project, submit a pull request, or raise an issue to improve the app.
-
-### Future Enhancements
-- [ ] Implement **push notifications** to alert users about new articles or updates.
-- [ ] Add **commenting and social features** for readers to interact with articles.
-- [ ] Introduce **user profiles** and **author bios**.
-
--->
-
-  
-### Technologies Used
-- 🖼 **SwiftUI**: For building beautiful UIs.
-- 💾 **CoreData**: For local persistence.
-- 🌐 **URLSession** or 🛠 **Alamofire**: For networking.
-- 🏗 **MVVM**: As the architecture pattern.
-
-## Screenshots
-<img width="700" alt="Screenshot 2024-10-04 at 10 41 23 AM" src="https://github.com/user-attachments/assets/9169d658-c302-4f0a-ad4f-cffa1b797646">
-<img width="700" alt="Screenshot 2024-10-04 at 3 30 39 PM" src="https://github.com/user-attachments/assets/ded08b27-03f3-4bbf-848e-d0883153c0db">
-<img width="700" alt="Screenshot 2024-10-04 at 3 31 42 PM" src="https://github.com/user-attachments/assets/823e19bf-07a4-4027-abe3-90913abb554e">
-<img width="700" alt="Screenshot 2024-10-14 at 12 05 28 AM" src="https://github.com/user-attachments/assets/432b090b-605f-4ca3-a542-1781533a3248">
-
-<img width="700" alt="Screenshot 2024-10-14 at 12 07 24 AM" src="https://github.com/user-attachments/assets/a1958d86-9903-413a-994f-65228c112b02">
-
-<img width="700" alt="Screenshot 2024-10-14 at 12 08 20 AM" src="https://github.com/user-attachments/assets/9594f8b1-9527-42e1-920c-b907cfc76ea6">
-
-<img width="339" alt="Screenshot 2024-10-14 at 12 10 20 AM" src="https://github.com/user-attachments/assets/0e2d2f98-689e-46fc-b595-7c00425a2f37">
-<img width="700" alt="Screenshot 2024-10-14 at 1 59 51 AM" src="https://github.com/user-attachments/assets/1f7ea8f2-1c74-4ca0-8113-bfc32d97b5d2">
-<img width="700" alt="Screenshot 2024-10-14 at 11 22 03 PM" src="https://github.com/user-attachments/assets/fb80c874-d56c-4c9f-a8bc-a06cc35fc9be">
-
-
-
-## License
-This project is licensed under the MIT License.
+Made with ❤️ by Shishir Rijal
