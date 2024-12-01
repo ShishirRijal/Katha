@@ -14,19 +14,20 @@ struct AuthView: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(alignment: .center) {
-                    HeaderView()
-                    DescriptionView()
-                    LoginOptionsView()
-                    AccountToggleView()
-                    if !authViewModel.isLoginMode {
-                        TermsView()
+                ScrollView {
+                    VStack(alignment: .center) {
+                        HeaderView()
+                        DescriptionView()
+                        LoginOptionsView()
+                        AccountToggleView()
+                        if !authViewModel.isLoginMode {
+                            TermsView()
+                        }
                     }
+                    .padding()
                 }
-                .padding()
-            }
-            .environmentObject(authViewModel)
+                .padding(.top)
+                .environmentObject(authViewModel)
         }
         .navigationBarBackButtonHidden(true)
     }
