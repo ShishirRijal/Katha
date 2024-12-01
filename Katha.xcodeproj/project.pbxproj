@@ -54,12 +54,10 @@
 		DBFABEDD2CAF454C006ABECA /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEDC2CAF454C006ABECA /* Font.swift */; };
 		DBFABEE12CAFBEF1006ABECA /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEE02CAFBEF1006ABECA /* AuthViewModel.swift */; };
 		DBFABEE32CAFC48A006ABECA /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEE22CAFC48A006ABECA /* RegistrationView.swift */; };
-		DBFABEE52CAFC633006ABECA /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEE42CAFC633006ABECA /* RegistrationViewModel.swift */; };
 		DBFABEE82CAFE13E006ABECA /* CustomLoginCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEE72CAFE13E006ABECA /* CustomLoginCard.swift */; };
 		DBFABEEA2CAFE2FC006ABECA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEE92CAFE2FC006ABECA /* CustomButton.swift */; };
 		DBFABEEC2CAFE39F006ABECA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEEB2CAFE39F006ABECA /* CustomTextField.swift */; };
 		DBFABEEE2CAFE756006ABECA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEED2CAFE756006ABECA /* LoginView.swift */; };
-		DBFABEF02CAFE964006ABECA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEEF2CAFE964006ABECA /* LoginViewModel.swift */; };
 		DBFABEF22CB012CF006ABECA /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEF12CB012CF006ABECA /* MainTabView.swift */; };
 		DBFABEF42CB013F3006ABECA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEF32CB013F3006ABECA /* HomeView.swift */; };
 		DBFABEF62CB01690006ABECA /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFABEF52CB01690006ABECA /* ExploreView.swift */; };
@@ -113,12 +111,10 @@
 		DBFABEDC2CAF454C006ABECA /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		DBFABEE02CAFBEF1006ABECA /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		DBFABEE22CAFC48A006ABECA /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
-		DBFABEE42CAFC633006ABECA /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		DBFABEE72CAFE13E006ABECA /* CustomLoginCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginCard.swift; sourceTree = "<group>"; };
 		DBFABEE92CAFE2FC006ABECA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DBFABEEB2CAFE39F006ABECA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DBFABEED2CAFE756006ABECA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		DBFABEEF2CAFE964006ABECA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DBFABEF12CB012CF006ABECA /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		DBFABEF32CB013F3006ABECA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DBFABEF52CB01690006ABECA /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -285,8 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				DBFABEE02CAFBEF1006ABECA /* AuthViewModel.swift */,
-				DBFABEE42CAFC633006ABECA /* RegistrationViewModel.swift */,
-				DBFABEEF2CAFE964006ABECA /* LoginViewModel.swift */,
 				DB6186CF2CFB4A19009DD895 /* WriteArticleViewModel.swift */,
 				DB6186D12CFB813B009DD895 /* HomeViewModel.swift */,
 				DB6186D72CFB9AE6009DD895 /* ArticleDetailViewModel.swift */,
@@ -425,11 +419,9 @@
 				DBFABEFA2CB0179E006ABECA /* ProfileView.swift in Sources */,
 				DBFABEE32CAFC48A006ABECA /* RegistrationView.swift in Sources */,
 				DB6186D42CFB97BF009DD895 /* ArticleTagGenerator.swift in Sources */,
-				DBFABEF02CAFE964006ABECA /* LoginViewModel.swift in Sources */,
 				DBFABEDD2CAF454C006ABECA /* Font.swift in Sources */,
 				DB77EF8E2CF3C0DB0071F6BC /* AuthError.swift in Sources */,
 				DB77EF8B2CF3BC0B0071F6BC /* AuthService.swift in Sources */,
-				DBFABEE52CAFC633006ABECA /* RegistrationViewModel.swift in Sources */,
 				DB6186D62CFB98FE009DD895 /* String.swift in Sources */,
 				DB6186D02CFB4A19009DD895 /* WriteArticleViewModel.swift in Sources */,
 				DB77EF9A2CF3C62C0071F6BC /* BackButton.swift in Sources */,
