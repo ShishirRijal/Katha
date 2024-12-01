@@ -30,6 +30,10 @@
 		DB6186D82CFB9AE6009DD895 /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186D72CFB9AE6009DD895 /* ArticleDetailViewModel.swift */; };
 		DB6186DA2CFBAA95009DD895 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186D92CFBAA95009DD895 /* ExploreViewModel.swift */; };
 		DB6186DE2CFBBC13009DD895 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186DD2CFBBC13009DD895 /* ProfileViewModel.swift */; };
+		DB6186E42CFC379F009DD895 /* AppData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB6186E22CFC379F009DD895 /* AppData.xcdatamodeld */; };
+		DB6186E62CFC38FC009DD895 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186E52CFC38FC009DD895 /* CoreDataManager.swift */; };
+		DB6186E82CFC3A66009DD895 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186E72CFC3A66009DD895 /* ArticleModel.swift */; };
+		DB6186EA2CFC416E009DD895 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186E92CFC416E009DD895 /* LibraryViewModel.swift */; };
 		DB77EF8B2CF3BC0B0071F6BC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF8A2CF3BC0B0071F6BC /* AuthService.swift */; };
 		DB77EF8E2CF3C0DB0071F6BC /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF8D2CF3C0DB0071F6BC /* AuthError.swift */; };
 		DB77EF922CF3C5340071F6BC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF912CF3C5340071F6BC /* HeaderView.swift */; };
@@ -85,6 +89,10 @@
 		DB6186D72CFB9AE6009DD895 /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
 		DB6186D92CFBAA95009DD895 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		DB6186DD2CFBBC13009DD895 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		DB6186E32CFC379F009DD895 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		DB6186E52CFC38FC009DD895 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		DB6186E72CFC3A66009DD895 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		DB6186E92CFC416E009DD895 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		DB77EF8A2CF3BC0B0071F6BC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DB77EF8D2CF3C0DB0071F6BC /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		DB77EF912CF3C5340071F6BC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -171,6 +179,7 @@
 				DB615D402CAF332F00CD1813 /* ContentView.swift */,
 				DB615D422CAF333000CD1813 /* Assets.xcassets */,
 				DB615D442CAF333000CD1813 /* Preview Content */,
+				DB6186E22CFC379F009DD895 /* AppData.xcdatamodeld */,
 			);
 			path = Katha;
 			sourceTree = "<group>";
@@ -188,6 +197,7 @@
 			children = (
 				DB77EF8A2CF3BC0B0071F6BC /* AuthService.swift */,
 				DB6186CD2CFB4520009DD895 /* DatabaseService.swift */,
+				DB6186E52CFC38FC009DD895 /* CoreDataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -256,6 +266,7 @@
 				DBFABEDC2CAF454C006ABECA /* Font.swift */,
 				DB32CCF12CB5861D00AB5887 /* Date.swift */,
 				DB6186D52CFB98FE009DD895 /* String.swift */,
+				DB6186E72CFC3A66009DD895 /* ArticleModel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,6 +295,7 @@
 				DB6186D72CFB9AE6009DD895 /* ArticleDetailViewModel.swift */,
 				DB6186D92CFBAA95009DD895 /* ExploreViewModel.swift */,
 				DB6186DD2CFBBC13009DD895 /* ProfileViewModel.swift */,
+				DB6186E92CFC416E009DD895 /* LibraryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -388,14 +400,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB77EF942CF3C5520071F6BC /* TermsView.swift in Sources */,
+				DB6186E82CFC3A66009DD895 /* ArticleModel.swift in Sources */,
 				DB6186CE2CFB4520009DD895 /* DatabaseService.swift in Sources */,
 				DB2115EE2CE71723008C237C /* SplashScreen.swift in Sources */,
 				DB32CCF22CB5861D00AB5887 /* Date.swift in Sources */,
 				DBFABEE82CAFE13E006ABECA /* CustomLoginCard.swift in Sources */,
+				DB6186EA2CFC416E009DD895 /* LibraryViewModel.swift in Sources */,
 				DB6186DA2CFBAA95009DD895 /* ExploreViewModel.swift in Sources */,
 				DB6186DE2CFBBC13009DD895 /* ProfileViewModel.swift in Sources */,
 				DB77EF982CF3C5770071F6BC /* RegistrationForm.swift in Sources */,
 				DBFABEEC2CAFE39F006ABECA /* CustomTextField.swift in Sources */,
+				DB6186E42CFC379F009DD895 /* AppData.xcdatamodeld in Sources */,
+				DB6186E62CFC38FC009DD895 /* CoreDataManager.swift in Sources */,
 				DBFABEC92CAF373C006ABECA /* AuthView.swift in Sources */,
 				DB32CCEE2CB558F900AB5887 /* ArticleDetailView.swift in Sources */,
 				DBFABEF42CB013F3006ABECA /* HomeView.swift in Sources */,
@@ -675,6 +691,19 @@
 			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		DB6186E22CFC379F009DD895 /* AppData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DB6186E32CFC379F009DD895 /* Model.xcdatamodel */,
+			);
+			currentVersion = DB6186E32CFC379F009DD895 /* Model.xcdatamodel */;
+			path = AppData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DB615D332CAF332F00CD1813 /* Project object */;
 }

@@ -40,15 +40,18 @@ struct CustomArticleCard: View {
 
         var body: some View {
             HStack {
-                AsyncImage(url: URL(string: image), content: { Image in
-                    Image
-                        .resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .frame(height:30)
-                        .clipShape(Circle())
-                }, placeholder: {
-                    Image(systemName: "person.fill")
-                })
+                if(!image.isEmpty) {
+                    AsyncImage(url: URL(string: image), content: { Image in
+                        Image
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fit)
+                            .frame(height:30)
+                            .clipShape(Circle())
+                    }, placeholder: {
+                        Image(systemName: "person.fill")
+                    })
+                }
+
                 Text(author)
                     .foregroundColor(.theme.primary)
                 .lineLimit(1)
@@ -142,7 +145,7 @@ struct CustomArticleCard: View {
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.theme.gray)
-                    .minimumScaleFactor(1.0)
+                    .minimumScaleFactor(0.8)
             }
         }
     }

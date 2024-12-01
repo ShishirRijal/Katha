@@ -12,6 +12,15 @@ class ArticleDetailViewModel: ObservableObject {
     @Published var articlesBySameAuthor: [ArticleModel] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
+    @Published var isBookmarked: Bool = false
+    var tags: [String] = []
+
+
+    @MainActor
+    func initialize(_ article: ArticleModel) {
+        self.isBookmarked = article.isBookmarked
+        self.tags = ArticleTagGenerator.generateTags(count: 5)
+    }
 
     @MainActor
     func loadArticlesByUser(userId: String) async {
@@ -29,4 +38,16 @@ class ArticleDetailViewModel: ObservableObject {
             print("Error fetching articles of user \(userId): \(error)")
         }
     }
+
+
+    func bookmarkArticle(_ article: ArticleModel) {
+        CoreDataManager.shared.saveArticle(article)
+        isBookmarked = true
+    }
+
+    func unbookmarkArticle(_ article: ArticleModel) {
+        CoreDataManager.shared.deleteArticle(withId: article.id)
+        isBookmarked = false
+    }
+
 }

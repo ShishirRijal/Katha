@@ -21,7 +21,7 @@ class HomeViewModel: ObservableObject {
         isLoading = true
         do {
             // Fetch all articles
-            var fetchedArticles = try await DatabaseService.shared.fetchAllArticles()
+            let fetchedArticles = try await DatabaseService.shared.fetchAllArticles()
             self.articles = fetchedArticles
             self.isLoading = false
         } catch {

@@ -8,23 +8,40 @@
 import SwiftUI
 
 struct LibraryView: View {
+    @StateObject var viewModel = LibraryViewModel()
+
     var body: some View {
-        VStack {
-            Header()
-                .padding(.bottom, 10)
-            ScrollView {
-                VStack(alignment: .leading) {
-                    ForEach(0..<8) { index in
-                            CustomArticleCard(article: dummyArticle, isBookmark: true)
-                            Divider()
-                            .padding(.vertical, 10)
-                    }
+        NavigationStack {
+            VStack {
+                Header()
+                    .padding(.bottom, 10)
+                if viewModel.articles.isEmpty {
+                  ContentUnavailableView("No articles found!", systemImage: "bookmark.slash", description: Text("You haven't saved any articles yet.\n"))
+
+                } else {
+                  ScrollView {
+                      ForEach(viewModel.articles) { article in
+                          NavigationLink(destination: ArticleDetailView(article: article, isBookmarked: true)) {
+                              VStack {
+                                  CustomArticleCard(article: article, isBookmark: true)
+                                      .foregroundColor(.theme.primary)
+                                  Divider()
+                                      .foregroundColor(.theme.lightGray)
+                              }
+
+                          }
+
+                      }
+                  }
                 }
             }
-        }
-        .padding(.horizontal)
-        .background(Color.theme.background
+            .onAppear {
+                viewModel.fetchArticles()
+            }
+            .padding(.horizontal)
+            .background(Color.theme.background
             .ignoresSafeArea())
+        }
     }
     
     private struct Header: View {
