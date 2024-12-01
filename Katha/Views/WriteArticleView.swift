@@ -16,6 +16,8 @@ struct WriteArticleView: View {
         NavigationStack {
             ZStack (alignment: .bottom) {
                 VStack {
+                    BackButton()
+
                     Text(vm.title)
                     .font(.title)
                     .fontWeight(.bold)
@@ -65,6 +67,7 @@ struct WriteArticleView: View {
                     }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

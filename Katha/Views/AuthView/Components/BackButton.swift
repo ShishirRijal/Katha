@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct BackButton: View {
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
         HStack {
-            NavigationLink(destination: AuthView()) {
-                Image(systemName: "chevron.left") // Back icon
-                    .font(.title) // Adjust the size of the icon
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image(systemName: "chevron.left")
+                    .font(.title2)
                     .foregroundColor(.theme.primary)
-            }
+            })
             Spacer() // Spacer to push the button to the left
         }
     }
