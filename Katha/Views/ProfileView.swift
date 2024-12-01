@@ -113,6 +113,9 @@ struct ProfileView: View {
 
                 }
             }
+            .refreshable {
+                await viewModel.fetchUserProfile(forceReload: true)
+            }
         }
         .onAppear {
             Task {
