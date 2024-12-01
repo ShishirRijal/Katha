@@ -31,6 +31,9 @@ struct HomeView: View {
                             }
                         }
                     }
+                    .refreshable {
+                       await viewModel.loadArticles(forceReload: true) // Force reload on refresh
+                   }
 
                 }
               
