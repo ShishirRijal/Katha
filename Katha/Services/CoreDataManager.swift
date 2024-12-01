@@ -14,7 +14,7 @@ class CoreDataManager {
     private let container: NSPersistentContainer
 
     init() {
-        container = NSPersistentContainer(name: "Katha")
+        container = NSPersistentContainer(name: "AppData")
         container.loadPersistentStores { _, error in
             if let error = error {
                 fatalError("Core Data failed to load: \(error.localizedDescription)")

@@ -30,7 +30,7 @@
 		DB6186D82CFB9AE6009DD895 /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186D72CFB9AE6009DD895 /* ArticleDetailViewModel.swift */; };
 		DB6186DA2CFBAA95009DD895 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186D92CFBAA95009DD895 /* ExploreViewModel.swift */; };
 		DB6186DE2CFBBC13009DD895 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186DD2CFBBC13009DD895 /* ProfileViewModel.swift */; };
-		DB6186E42CFC379F009DD895 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB6186E22CFC379F009DD895 /* Model.xcdatamodeld */; };
+		DB6186E42CFC379F009DD895 /* AppData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB6186E22CFC379F009DD895 /* AppData.xcdatamodeld */; };
 		DB6186E62CFC38FC009DD895 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186E52CFC38FC009DD895 /* CoreDataManager.swift */; };
 		DB6186E82CFC3A66009DD895 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6186E72CFC3A66009DD895 /* ArticleModel.swift */; };
 		DB77EF8B2CF3BC0B0071F6BC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77EF8A2CF3BC0B0071F6BC /* AuthService.swift */; };
@@ -177,7 +177,7 @@
 				DB615D402CAF332F00CD1813 /* ContentView.swift */,
 				DB615D422CAF333000CD1813 /* Assets.xcassets */,
 				DB615D442CAF333000CD1813 /* Preview Content */,
-				DB6186E22CFC379F009DD895 /* Model.xcdatamodeld */,
+				DB6186E22CFC379F009DD895 /* AppData.xcdatamodeld */,
 			);
 			path = Katha;
 			sourceTree = "<group>";
@@ -406,7 +406,7 @@
 				DB6186DE2CFBBC13009DD895 /* ProfileViewModel.swift in Sources */,
 				DB77EF982CF3C5770071F6BC /* RegistrationForm.swift in Sources */,
 				DBFABEEC2CAFE39F006ABECA /* CustomTextField.swift in Sources */,
-				DB6186E42CFC379F009DD895 /* Model.xcdatamodeld in Sources */,
+				DB6186E42CFC379F009DD895 /* AppData.xcdatamodeld in Sources */,
 				DB6186E62CFC38FC009DD895 /* CoreDataManager.swift in Sources */,
 				DBFABEC92CAF373C006ABECA /* AuthView.swift in Sources */,
 				DB32CCEE2CB558F900AB5887 /* ArticleDetailView.swift in Sources */,
@@ -689,14 +689,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		DB6186E22CFC379F009DD895 /* Model.xcdatamodeld */ = {
+		DB6186E22CFC379F009DD895 /* AppData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				DB6186E32CFC379F009DD895 /* Model.xcdatamodel */,
 			);
 			currentVersion = DB6186E32CFC379F009DD895 /* Model.xcdatamodel */;
-			name = Model.xcdatamodeld;
-			path = /Users/shishirrijal/Shishir/Swift/Katha/Katha/Model.xcdatamodeld;
+			path = AppData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

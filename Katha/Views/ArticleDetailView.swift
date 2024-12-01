@@ -27,10 +27,15 @@ struct ArticleDetailView: View {
 
                     // Share Button
                     Button(action: {
-                       // Share
+                        if article.isBookmarked {
+                            viewModel.unbookmarkArticle(article)
+                        } else {
+                            viewModel.bookmarkArticle(article)
+                        }
                     }, label: {
-                        Image(systemName: "square.and.arrow.up")
+                        Image(systemName: viewModel.isBookmarked ? "heart.fill": "heart")
                     })
+                    .foregroundColor(viewModel.isBookmarked ? .theme.accent : .theme.primary)
 
                     // Menu Button
                     Button(action: {
@@ -63,7 +68,7 @@ struct ArticleDetailView: View {
                         // Tags [Random For Now]
                         ScrollView(.horizontal, showsIndicators: false) {
                                     HStack(spacing: 20) {
-                                        ForEach(ArticleTagGenerator.generateTags(count: 5), id: \.self) {tag in
+                                        ForEach(viewModel.tags, id: \.self) {tag in
                                                 CustomTagChip(tag)
                                         }
                                     
@@ -118,6 +123,9 @@ struct ArticleDetailView: View {
                        }
                     }
                 }
+            }
+            .onAppear {
+                viewModel.initialize(article)
             }
             .background(Color.theme.background)
         }
@@ -205,10 +213,7 @@ struct AuthorDetail: View {
 struct ArticleAuthorHeader: View {
     let article: ArticleModel
 
-    
-
     var body: some View {
-        
         HStack {
             AsyncImage(url: URL(string: article.author!.photoURL), content: { Image in
                 Image
