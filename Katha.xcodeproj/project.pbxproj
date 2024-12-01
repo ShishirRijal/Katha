@@ -14,7 +14,6 @@
 		DB2115F92CE71BA9008C237C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DB2115F82CE71BA9008C237C /* FirebaseFirestore */; };
 		DB2115FB2CE71BA9008C237C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DB2115FA2CE71BA9008C237C /* FirebaseStorage */; };
 		DB32CCEE2CB558F900AB5887 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CCED2CB558F900AB5887 /* ArticleDetailView.swift */; };
-		DB32CCF02CB5725800AB5887 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CCEF2CB5725800AB5887 /* Author.swift */; };
 		DB32CCF22CB5861D00AB5887 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CCF12CB5861D00AB5887 /* Date.swift */; };
 		DB615D3F2CAF332F00CD1813 /* KathaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB615D3E2CAF332F00CD1813 /* KathaApp.swift */; };
 		DB615D412CAF332F00CD1813 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB615D402CAF332F00CD1813 /* ContentView.swift */; };
@@ -72,7 +71,6 @@
 /* Begin PBXFileReference section */
 		DB2115ED2CE71723008C237C /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		DB32CCED2CB558F900AB5887 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
-		DB32CCEF2CB5725800AB5887 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		DB32CCF12CB5861D00AB5887 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		DB615D3B2CAF332F00CD1813 /* Katha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Katha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB615D3E2CAF332F00CD1813 /* KathaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KathaApp.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				DB7EDDAF2CB04D5600556006 /* Article.swift */,
-				DB32CCEF2CB5725800AB5887 /* Author.swift */,
 				DB77EF9B2CF3CA920071F6BC /* User.swift */,
 			);
 			path = Models;
@@ -436,7 +433,6 @@
 				DB6186D62CFB98FE009DD895 /* String.swift in Sources */,
 				DB6186D02CFB4A19009DD895 /* WriteArticleViewModel.swift in Sources */,
 				DB77EF9A2CF3C62C0071F6BC /* BackButton.swift in Sources */,
-				DB32CCF02CB5725800AB5887 /* Author.swift in Sources */,
 				DBFABEF22CB012CF006ABECA /* MainTabView.swift in Sources */,
 				DB77EF962CF3C5640071F6BC /* LoginForm.swift in Sources */,
 				DB8BF9E92CF2EE2800622F5F /* CustomSecureField.swift in Sources */,
