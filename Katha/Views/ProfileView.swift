@@ -11,14 +11,15 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var authVM: AuthViewModel
     @StateObject var viewModel = ProfileViewModel()
+    @State var showLogoutConfirmation = false
+
     var body: some View {
         NavigationStack {
             VStack {
                 HStack {
                     Spacer()
                     Button(action: {
-                        // logout
-                        authVM.logout()
+                        showLogoutConfirmation = true
                     }, label: {
                         Image(systemName: "rectangle.portrait.and.arrow.forward") // rectangle.portrait.and.arrow.right
                             .foregroundColor(.primary)
@@ -129,6 +130,12 @@ struct ProfileView: View {
                     .padding()
             }
 
+        }
+        .alert(isPresented: $showLogoutConfirmation) {
+            Alert(title: Text("Sign Out?"), message: Text("Are you sure you want to sign out your account?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .destructive(Text("Sign Out"), action: {
+                // logout
+                authVM.logout()
+            }))
         }
     }
 }
