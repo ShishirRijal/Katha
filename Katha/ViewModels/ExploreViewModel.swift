@@ -20,11 +20,15 @@ class ExploreViewModel: ObservableObject {
         return errorMessage != nil
     }
 
-
-
     /// Load all articles
     @MainActor
-    func loadAllArticles() async {
+    func loadAllArticles(forceReload: Bool = false) async {
+        // Reload only if forceReload is true or articles are empty
+        guard forceReload || allArticles.isEmpty else {
+            print("Articles already loaded. Skipping fetch.")
+            return
+        }
+
         isLoading = true
         do {
             // Fetch all articles
@@ -41,7 +45,13 @@ class ExploreViewModel: ObservableObject {
 
     /// Fetch trending articles
     @MainActor
-    func loadTrendingArticles(limit: Int = 10) async {
+    func loadTrendingArticles(forceReload: Bool = false, limit: Int = 10) async {
+        // Reload only if forceReload is true or articles are empty
+        guard forceReload || trendingArticles.isEmpty else {
+            print("Trending Articles already loaded. Skipping fetch.")
+            return
+        }
+
         isLoading = true
         do {
             let articles = try await DatabaseService.shared.fetchTrendingArticles(limit: limit)
@@ -61,7 +71,8 @@ class ExploreViewModel: ObservableObject {
             filteredArticles = trendingArticles
             return
         }
-
+        
+        // Filter based on title, author, or content
         filteredArticles = trendingArticles.filter { article in
             article.title.localizedCaseInsensitiveContains(searchText) ||
             article.author?.fullName.localizedCaseInsensitiveContains(searchText) ?? false ||
