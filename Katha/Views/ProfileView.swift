@@ -101,9 +101,11 @@ struct ProfileView: View {
                         } else {
                             ForEach(viewModel.recentArticles) {article in
                                 NavigationLink(destination: ArticleDetailView(article: article)) {
-                                    CustomArticleCard(article: article, isBookmark: false)
-                                    Divider().padding(10)
+                                    VStack {
+                                        CustomArticleCard(article: article, isBookmark: false)
 
+                                        Divider()
+                                    }
                                 }
                                 .foregroundColor(.theme.primary)
                             }

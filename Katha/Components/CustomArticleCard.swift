@@ -20,16 +20,18 @@ struct CustomArticleCard: View {
             VStack(alignment: .leading) {
                 // Introduction
                 ArticleIntroduction(title: article.title, introduction: article.content)
+                    .padding(.bottom, 5)
 
                 if(!isBookmark) {
-                    Spacer()
+//
                     // ArticleStats
                     ArticleStats(date: article.timestamp.dateValue().toMonthAndDayFormat(shortMonth: true))
+                        .padding(.vertical, 10)
                 }
             }
 
         }
-        .frame(width: .infinity, height: isBookmark ? 140 : 200)
+//        .frame(width: .infinity, height: isBookmark ? 140 : 200)
        
     }
     
@@ -135,9 +137,10 @@ struct CustomArticleCard: View {
                 // Article Title
                 Text(title.trimmingCharacters(in: .whitespacesAndNewlines))
                     .font(.custom(.poppinsBold, size: 24))
-                    .lineLimit(2, reservesSpace: true) // Ensures space for two lines
+                    .lineLimit(2)
                     .multilineTextAlignment(.leading)
-                    .minimumScaleFactor(0.8) // Scales text down to fit two lines if too long
+                    .minimumScaleFactor(0.8)
+                    .padding(.bottom, 5)
 
                 // Article Insight
                 Text(introduction.trimmingCharacters(in: .whitespacesAndNewlines))
